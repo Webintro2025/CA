@@ -119,6 +119,59 @@ const HomeBanner = () => {
     }
   }
 
+  const textVariants = {
+    hidden: { 
+      opacity: 0, 
+      x: 100, 
+      scale: 0.8 
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const taglineVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 30,
+      rotateX: -20
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  }
+
+  const descriptionVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      scale: 0.9
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+        delay: 0.3
+      }
+    }
+  }
+
   return (
     <motion.div 
       className="relative w-full h-[70vh] overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-800"
@@ -154,11 +207,374 @@ const HomeBanner = () => {
             
             {/* Overlay for better contrast */}
             <motion.div 
-              className="absolute inset-0 bg-black/20"
+              className="absolute inset-0 bg-black/30"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
             />
+
+            {/* Text Content for First Banner */}
+            {currentIndex === 0 && (
+              <motion.div 
+                className="absolute inset-0 flex items-center justify-end pr-8 md:pr-16"
+                variants={textVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.div 
+                  className="max-w-lg text-right text-white"
+                  variants={textVariants}
+                >
+                  {/* Tagline */}
+                  <motion.h1 
+                    className="text-4xl md:text-6xl font-extrabold leading-tight mb-6"
+                    variants={taglineVariants}
+                    whileHover={{ 
+                      scale: 1.02,
+                      textShadow: "0 0 20px rgba(255,255,255,0.5)"
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <motion.span 
+                      className="bg-gradient-to-r from-sky-400 to-white bg-clip-text text-transparent"
+                      animate={{ 
+                        backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+                      }}
+                      transition={{ 
+                        duration: 3, 
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      "Start Solo.
+                    </motion.span>
+                    <br />
+                    <motion.span 
+                      className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5, duration: 0.6 }}
+                    >
+                      Stay Compliant."
+                    </motion.span>
+                  </motion.h1>
+
+                  {/* Description */}
+                  <motion.p 
+                    className="text-lg md:text-xl leading-relaxed mb-8 text-gray-100"
+                    variants={descriptionVariants}
+                    whileHover={{ 
+                      scale: 1.02,
+                      color: "#ffffff"
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <motion.span
+                      animate={{ 
+                        opacity: [0.8, 1, 0.8]
+                      }}
+                      transition={{ 
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      Get your sole proprietorship registered for smooth business operations.
+                    </motion.span>
+                  </motion.p>
+
+                  {/* Call to Action Button */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                  >
+                    <motion.button 
+                      className="bg-gradient-to-r from-sky-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg backdrop-blur-md"
+                      whileHover={{ 
+                        scale: 1.05,
+                        boxShadow: "0 20px 40px rgba(14, 165, 233, 0.4)",
+                        backgroundColor: "rgba(14, 165, 233, 0.9)"
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => window.open('https://wa.me/919821575784', '_blank')}
+                      animate={{
+                        boxShadow: [
+                          "0 10px 30px rgba(14, 165, 233, 0.2)",
+                          "0 15px 40px rgba(14, 165, 233, 0.4)",
+                          "0 10px 30px rgba(14, 165, 233, 0.2)"
+                        ]
+                      }}
+                      transition={{
+                        boxShadow: {
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }
+                      }}
+                    >
+                      <motion.span 
+                        className="flex items-center gap-2"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        Get Started Today
+                        <motion.i 
+                          className="fas fa-arrow-right"
+                          animate={{ x: [0, 5, 0] }}
+                          transition={{ 
+                            duration: 1.5, 
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        />
+                      </motion.span>
+                    </motion.button>
+                  </motion.div>
+
+                  {/* Floating Elements */}
+                  <motion.div
+                    className="absolute -top-10 -right-10 w-20 h-20 bg-sky-400/20 rounded-full blur-xl"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0.3, 0.6, 0.3]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  <motion.div
+                    className="absolute -bottom-5 -left-5 w-16 h-16 bg-white/20 rounded-full blur-lg"
+                    animate={{
+                      scale: [1, 1.3, 1],
+                      opacity: [0.2, 0.5, 0.2]
+                    }}
+                    transition={{
+                      duration: 2.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 1
+                    }}
+                  />
+                </motion.div>
+              </motion.div>
+            )}
+
+            {/* Text Content for Third Banner (GST Return Filing) */}
+            {currentIndex === 2 && (
+              <motion.div 
+                className="absolute inset-0 flex items-center justify-start pl-8 md:pl-16"
+                variants={textVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.div 
+                  className="max-w-lg text-left text-white"
+                  variants={textVariants}
+                >
+                  {/* Service Badge */}
+                  <motion.div
+                    className="inline-flex items-center gap-2 bg-green-500/20 backdrop-blur-md border border-green-400/30 rounded-full px-4 py-2 mb-6"
+                    initial={{ opacity: 0, scale: 0.8, y: -20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    whileHover={{ 
+                      scale: 1.05,
+                      backgroundColor: "rgba(34, 197, 94, 0.3)"
+                    }}
+                  >
+                    <motion.i 
+                      className="fas fa-check-circle text-green-400 text-lg"
+                      animate={{ 
+                        rotate: [0, 360],
+                        scale: [1, 1.1, 1]
+                      }}
+                      transition={{ 
+                        rotate: { duration: 2, repeat: Infinity, ease: "linear" },
+                        scale: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+                      }}
+                    />
+                    <span className="text-green-300 font-semibold text-sm">GST Return Filing</span>
+                  </motion.div>
+
+                  {/* Tagline */}
+                  <motion.h1 
+                    className="text-4xl md:text-6xl font-extrabold leading-tight mb-6"
+                    variants={taglineVariants}
+                    whileHover={{ 
+                      scale: 1.02,
+                      textShadow: "0 0 20px rgba(255,255,255,0.5)"
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <motion.span 
+                      className="bg-gradient-to-r from-green-400 to-white bg-clip-text text-transparent"
+                      animate={{ 
+                        backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+                      }}
+                      transition={{ 
+                        duration: 3, 
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      "No Penalties.
+                    </motion.span>
+                    <br />
+                    <motion.span 
+                      className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5, duration: 0.6 }}
+                    >
+                      Timely GST Filing."
+                    </motion.span>
+                  </motion.h1>
+
+                  {/* Description */}
+                  <motion.p 
+                    className="text-lg md:text-xl leading-relaxed mb-8 text-gray-100"
+                    variants={descriptionVariants}
+                    whileHover={{ 
+                      scale: 1.02,
+                      color: "#ffffff"
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <motion.span
+                      animate={{ 
+                        opacity: [0.8, 1, 0.8]
+                      }}
+                      transition={{ 
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      Monthly/quarterly GST return filing services to keep your business on track.
+                    </motion.span>
+                  </motion.p>
+
+                  {/* Features List */}
+                  <motion.div 
+                    className="mb-8"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6, duration: 0.6 }}
+                  >
+                    {[
+                      "GSTR-1, GSTR-3B Filing",
+                      "Error-free Returns",
+                      "Timely Submissions"
+                    ].map((feature, index) => (
+                      <motion.div
+                        key={feature}
+                        className="flex items-center gap-3 mb-2"
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ 
+                          delay: 0.7 + (index * 0.1), 
+                          duration: 0.5 
+                        }}
+                        whileHover={{ x: 5 }}
+                      >
+                        <motion.div
+                          className="w-2 h-2 bg-green-400 rounded-full"
+                          animate={{ 
+                            scale: [1, 1.3, 1],
+                            opacity: [0.7, 1, 0.7]
+                          }}
+                          transition={{ 
+                            duration: 1.5,
+                            repeat: Infinity,
+                            delay: index * 0.2
+                          }}
+                        />
+                        <span className="text-sm text-gray-200">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+
+                  {/* Call to Action Button */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                  >
+                    <motion.button 
+                      className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg backdrop-blur-md"
+                      whileHover={{ 
+                        scale: 1.05,
+                        boxShadow: "0 20px 40px rgba(34, 197, 94, 0.4)",
+                        backgroundColor: "rgba(34, 197, 94, 0.9)"
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => window.open('https://wa.me/919821575784', '_blank')}
+                      animate={{
+                        boxShadow: [
+                          "0 10px 30px rgba(34, 197, 94, 0.2)",
+                          "0 15px 40px rgba(34, 197, 94, 0.4)",
+                          "0 10px 30px rgba(34, 197, 94, 0.2)"
+                        ]
+                      }}
+                      transition={{
+                        boxShadow: {
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }
+                      }}
+                    >
+                      <motion.span 
+                        className="flex items-center gap-2"
+                        whileHover={{ x: -5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <motion.i 
+                          className="fas fa-arrow-left"
+                          animate={{ x: [0, -5, 0] }}
+                          transition={{ 
+                            duration: 1.5, 
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        />
+                        File GST Returns Now
+                      </motion.span>
+                    </motion.button>
+                  </motion.div>
+
+                  {/* Floating Elements */}
+                  <motion.div
+                    className="absolute -top-10 -left-10 w-20 h-20 bg-green-400/20 rounded-full blur-xl"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0.3, 0.6, 0.3]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  <motion.div
+                    className="absolute -bottom-5 -right-5 w-16 h-16 bg-white/20 rounded-full blur-lg"
+                    animate={{
+                      scale: [1, 1.3, 1],
+                      opacity: [0.2, 0.5, 0.2]
+                    }}
+                    transition={{
+                      duration: 2.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 1
+                    }}
+                  />
+                </motion.div>
+              </motion.div>
+            )}
           </motion.div>
         </AnimatePresence>
       </div>

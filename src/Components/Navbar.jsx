@@ -161,8 +161,9 @@ const Navbar = () => {
             />
           </motion.div>
           <motion.ul 
-            className="hidden md:flex items-center space-x-6 text-sm font-semibold"
+            className="hidden md:flex items-center space-x-6 text-sm font-semibold relative z-[10000]"
             variants={navVariants}
+            style={{ zIndex: 10000 }}
           >
             <motion.li 
               className="text-blue-600 cursor-pointer relative group"
@@ -221,7 +222,7 @@ const Navbar = () => {
               ></motion.i>
             </motion.li>
             <motion.li 
-              className="cursor-pointer relative font-normal text-gray-700"
+              className="cursor-pointer relative font-normal text-gray-700 z-[10000]"
               variants={menuItemVariants}
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
@@ -230,6 +231,7 @@ const Navbar = () => {
                 color: "#374151",
                 transition: { duration: 0.3 }
               }}
+              style={{ zIndex: 10000 }}
             >
               <motion.span
                 className="relative"
@@ -254,11 +256,12 @@ const Navbar = () => {
               <AnimatePresence>
                 {isServicesOpen && (
                   <motion.div
-                    className="absolute top-full left-0 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
+                    className="absolute top-full left-0 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-[99999]"
                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
+                    style={{ zIndex: 99999 }}
                   >
                     <motion.ul className="space-y-1">
                       {[
