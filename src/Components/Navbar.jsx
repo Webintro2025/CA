@@ -478,24 +478,170 @@ const Navbar = () => {
 
           {/* Sticky Navbar Links - Desktop */}
           <motion.div 
-            className="hidden md:flex space-x-8"
+            className="hidden md:flex space-x-8 relative z-[10000]"
             variants={stickyItemVariants}
+            style={{ zIndex: 10000 }}
           >
-            {['Home', 'About', 'Services', 'Team', 'Contact'].map((item, index) => (
-              <motion.div
-                key={item}
-                variants={stickyItemVariants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+            <motion.div
+              variants={stickyItemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link 
+                href="#home"
+                className="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 relative group"
               >
-                <Link 
-                  href={`#${item.toLowerCase()}`}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                <motion.span
+                  className="relative"
+                  whileHover={{ y: -2 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  {item}
-                </Link>
-              </motion.div>
-            ))}
+                  Home
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-gray-500"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.span>
+              </Link>
+            </motion.div>
+            
+            <motion.div
+              variants={stickyItemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link 
+                href="#about"
+                className="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 relative group"
+              >
+                <motion.span
+                  className="relative"
+                  whileHover={{ y: -2 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  About Us
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-gray-500"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.span>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              className="cursor-pointer relative font-semibold text-gray-700 z-[10000]"
+              variants={stickyItemVariants}
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+              whileHover={{ 
+                scale: 1.05,
+                color: "#374151",
+                transition: { duration: 0.3 }
+              }}
+              style={{ zIndex: 10000 }}
+            >
+              <motion.span
+                className="relative"
+                whileHover={{ y: -2 }}
+                transition={{ duration: 0.3 }}
+              >
+                Our Services
+                <motion.div
+                  className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-gray-500 to-blue-500"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.span>
+              <motion.i 
+                className="fas fa-caret-down ml-1"
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              ></motion.i>
+              
+              {/* Dropdown Menu for Sticky Navbar */}
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div
+                    className="absolute top-full left-0 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-[99999]"
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    style={{ zIndex: 99999 }}
+                  >
+                    <motion.ul className="space-y-1">
+                      {[
+                        'Company Registration',
+                        'GST Registration',
+                        'Tax Planning',
+                        'Compliance Services',
+                        'Financial Advisory',
+                        'Audit Services',
+                        'Business Consulting',
+                        'Legal Documentation'
+                      ].map((service, index) => (
+                        <motion.li
+                          key={service}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ 
+                            duration: 0.2,
+                            delay: index * 0.05
+                          }}
+                          whileHover={{ 
+                            backgroundColor: "#EBF8FF",
+                            color: "#2563EB",
+                            x: 5
+                          }}
+                          className="px-4 py-2 text-sm text-gray-700 cursor-pointer transition-all duration-200"
+                        >
+                          <motion.div
+                            className="flex items-center space-x-2"
+                          >
+                            <motion.span
+                              className="w-2 h-2 bg-blue-500 rounded-full"
+                              whileHover={{ scale: 1.3 }}
+                              transition={{ duration: 0.2 }}
+                            />
+                            <span>{service}</span>
+                          </motion.div>
+                        </motion.li>
+                      ))}
+                    </motion.ul>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+
+            <motion.div
+              variants={stickyItemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link 
+                href="#contact"
+                className="text-gray-700 hover:text-gray-900 font-semibold transition-colors duration-200 relative group"
+              >
+                <motion.span
+                  className="relative"
+                  whileHover={{ y: -2 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Contact Us
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-gray-500 to-blue-500"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.span>
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Sticky WhatsApp Button */}

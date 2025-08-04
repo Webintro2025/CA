@@ -216,13 +216,13 @@ const HomeBanner = () => {
             {/* Text Content for First Banner */}
             {currentIndex === 0 && (
               <motion.div 
-                className="absolute inset-0 flex items-center justify-end pr-8 md:pr-16"
+                className="absolute inset-0 flex items-center justify-end pr-24 md:pr-16"
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
               >
                 <motion.div 
-                  className="max-w-lg text-right text-white"
+                  className="max-w-lg text-left text-white"
                   variants={textVariants}
                 >
                   {/* Tagline */}
@@ -365,28 +365,28 @@ const HomeBanner = () => {
             {/* Text Content for Third Banner (GST Return Filing) */}
             {currentIndex === 2 && (
               <motion.div 
-                className="absolute inset-0 flex items-center justify-start pl-8 md:pl-16"
+                className="absolute inset-0 flex items-center justify-start pl-12 md:pl-20"
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
               >
                 <motion.div 
-                  className="max-w-lg text-left text-white"
+                  className="max-w-md text-left text-white"
                   variants={textVariants}
                 >
                   {/* Service Badge */}
                   <motion.div
-                    className="inline-flex items-center gap-2 bg-green-500/20 backdrop-blur-md border border-green-400/30 rounded-full px-4 py-2 mb-6"
+                    className="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md border border-blue-400/40 rounded-full px-3 py-1.5 mb-4"
                     initial={{ opacity: 0, scale: 0.8, y: -20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     whileHover={{ 
                       scale: 1.05,
-                      backgroundColor: "rgba(34, 197, 94, 0.3)"
+                      backgroundColor: "rgba(0, 0, 0, 0.5)"
                     }}
                   >
                     <motion.i 
-                      className="fas fa-check-circle text-green-400 text-lg"
+                      className="fas fa-check-circle text-blue-400 text-sm"
                       animate={{ 
                         rotate: [0, 360],
                         scale: [1, 1.1, 1]
@@ -396,12 +396,12 @@ const HomeBanner = () => {
                         scale: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
                       }}
                     />
-                    <span className="text-green-300 font-semibold text-sm">GST Return Filing</span>
+                    <span className="text-blue-300 font-semibold text-xs">GST Return Filing</span>
                   </motion.div>
 
                   {/* Tagline */}
                   <motion.h1 
-                    className="text-4xl md:text-6xl font-extrabold leading-tight mb-6"
+                    className="text-3xl md:text-5xl font-extrabold leading-tight mb-4"
                     variants={taglineVariants}
                     whileHover={{ 
                       scale: 1.02,
@@ -410,7 +410,7 @@ const HomeBanner = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <motion.span 
-                      className="bg-gradient-to-r from-green-400 to-white bg-clip-text text-transparent"
+                      className="bg-gradient-to-r from-blue-400 to-black bg-clip-text text-transparent"
                       animate={{ 
                         backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
                       }}
@@ -424,7 +424,7 @@ const HomeBanner = () => {
                     </motion.span>
                     <br />
                     <motion.span 
-                      className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+                      className="bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent"
                       initial={{ opacity: 0, x: -50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.5, duration: 0.6 }}
@@ -435,7 +435,7 @@ const HomeBanner = () => {
 
                   {/* Description */}
                   <motion.p 
-                    className="text-lg md:text-xl leading-relaxed mb-8 text-gray-100"
+                    className="text-base md:text-lg leading-relaxed mb-6 text-blue-100"
                     variants={descriptionVariants}
                     whileHover={{ 
                       scale: 1.02,
@@ -459,7 +459,7 @@ const HomeBanner = () => {
 
                   {/* Features List */}
                   <motion.div 
-                    className="mb-8"
+                    className="mb-6"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.6 }}
@@ -471,7 +471,7 @@ const HomeBanner = () => {
                     ].map((feature, index) => (
                       <motion.div
                         key={feature}
-                        className="flex items-center gap-3 mb-2"
+                        className="flex items-center gap-2 mb-1.5"
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ 
@@ -481,7 +481,7 @@ const HomeBanner = () => {
                         whileHover={{ x: 5 }}
                       >
                         <motion.div
-                          className="w-2 h-2 bg-green-400 rounded-full"
+                          className="w-1.5 h-1.5 bg-blue-400 rounded-full"
                           animate={{ 
                             scale: [1, 1.3, 1],
                             opacity: [0.7, 1, 0.7]
@@ -492,7 +492,7 @@ const HomeBanner = () => {
                             delay: index * 0.2
                           }}
                         />
-                        <span className="text-sm text-gray-200">{feature}</span>
+                        <span className="text-xs text-blue-200">{feature}</span>
                       </motion.div>
                     ))}
                   </motion.div>
@@ -504,19 +504,19 @@ const HomeBanner = () => {
                     transition={{ delay: 0.8, duration: 0.6 }}
                   >
                     <motion.button 
-                      className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg backdrop-blur-md"
+                      className="bg-gradient-to-r from-black to-blue-600 text-white px-6 py-3 rounded-full font-semibold text-base shadow-lg backdrop-blur-md border border-blue-400/30"
                       whileHover={{ 
                         scale: 1.05,
-                        boxShadow: "0 20px 40px rgba(34, 197, 94, 0.4)",
-                        backgroundColor: "rgba(34, 197, 94, 0.9)"
+                        boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)",
+                        backgroundColor: "rgba(0, 0, 0, 0.8)"
                       }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => window.open('https://wa.me/919821575784', '_blank')}
                       animate={{
                         boxShadow: [
-                          "0 10px 30px rgba(34, 197, 94, 0.2)",
-                          "0 15px 40px rgba(34, 197, 94, 0.4)",
-                          "0 10px 30px rgba(34, 197, 94, 0.2)"
+                          "0 10px 30px rgba(0, 0, 0, 0.3)",
+                          "0 15px 40px rgba(59, 130, 246, 0.4)",
+                          "0 10px 30px rgba(0, 0, 0, 0.3)"
                         ]
                       }}
                       transition={{
@@ -548,7 +548,7 @@ const HomeBanner = () => {
 
                   {/* Floating Elements */}
                   <motion.div
-                    className="absolute -top-10 -left-10 w-20 h-20 bg-green-400/20 rounded-full blur-xl"
+                    className="absolute -top-8 -left-8 w-16 h-16 bg-black/30 rounded-full blur-xl"
                     animate={{
                       scale: [1, 1.2, 1],
                       opacity: [0.3, 0.6, 0.3]
@@ -560,7 +560,7 @@ const HomeBanner = () => {
                     }}
                   />
                   <motion.div
-                    className="absolute -bottom-5 -right-5 w-16 h-16 bg-white/20 rounded-full blur-lg"
+                    className="absolute -bottom-4 -right-4 w-12 h-12 bg-blue-400/30 rounded-full blur-lg"
                     animate={{
                       scale: [1, 1.3, 1],
                       opacity: [0.2, 0.5, 0.2]

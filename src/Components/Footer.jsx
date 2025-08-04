@@ -75,17 +75,31 @@ const Footer = () => {
           >
             <div className="mb-4">
               <Link href="/">
-                <motion.h1 
-                  className="text-2xl font-bold text-white mb-2 cursor-pointer" 
-                  style={{fontFamily: 'Montserrat, sans-serif'}}
-                  whileHover={{ 
-                    color: "#60A5FA",
-                    scale: 1.05,
-                    transition: { duration: 0.3 }
-                  }}
-                >
-                  Eazy Tax
-                </motion.h1>
+                <motion.div className="flex items-center space-x-3 mb-3 cursor-pointer">
+                  <motion.img 
+                    alt="Eazy Tax logo" 
+                    className="object-contain" 
+                    height={45} 
+                    src="/log.jpg" 
+                    width={60}
+                    whileHover={{ 
+                      rotate: [0, -5, 5, 0],
+                      scale: 1.1,
+                      transition: { duration: 0.5 }
+                    }}
+                  />
+                  <motion.h1 
+                    className="text-2xl font-bold text-white" 
+                    style={{fontFamily: 'Montserrat, sans-serif'}}
+                    whileHover={{ 
+                      color: "#60A5FA",
+                      scale: 1.05,
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    Eazy Tax
+                  </motion.h1>
+                </motion.div>
               </Link>
               <motion.p 
                 className="text-sm text-blue-400 font-medium mb-3"
@@ -102,7 +116,7 @@ const Footer = () => {
                 transition={{ delay: 0.5, duration: 0.6 }}
               >
                 <p><strong>GST:</strong> 09AAJCC5657K1Z3</p>
-                <p><strong>Address:</strong> A 90 Sector 4 Noida Ground Floor</p>
+                <p><strong>Address:</strong> B-39 2nd Floor, Bharat Nagar, New Friends Colony, Delhi</p>
                 <p>Your trusted partner for all business registration and tax compliance needs.</p>
               </motion.div>
             </div>
@@ -138,30 +152,36 @@ const Footer = () => {
                 viewport={{ once: true }}
               >
                 {[
-                  "Company Registration",
-                  "LLP Registration", 
-                  "Partnership Firm Registration",
-                  "Sole Proprietorship Registration",
-                  "MSME Registration",
-                  "Startupindia Registration",
-                  "Society Registration",
-                  "Trust Registration",
-                  "Import Export Code Registration",
-                  "GST Registration",
-                  "GST Return Filing",
-                  "Bookkeeping Services"
+                  { name: "Company Registration", link: "/services/company-registration" },
+                  { name: "LLP Registration", link: "/services/llp-registration" }, 
+                  { name: "Partnership Firm Registration", link: "/services/partnership-registration" },
+                  { name: "Sole Proprietorship Registration", link: "/services/sole-proprietorship" },
+                  { name: "MSME Registration", link: "/services/msme-registration" },
+                  { name: "Startupindia Registration", link: "/services/startup-registration" },
+                  { name: "Society Registration", link: "/services/society-registration" },
+                  { name: "Trust Registration", link: "/services/trust-registration" },
+                  { name: "Import Export Code Registration", link: "/services/iec-registration" },
+                  { name: "GST Registration", link: "/services/gst-registration" },
+                  { name: "GST Return Filing", link: "/services/gst-return-filing" },
+                  { name: "Bookkeeping Services", link: "/services/bookkeeping" }
                 ].map((service, index) => (
                   <motion.li 
                     key={index}
                     className="cursor-pointer"
                     variants={listItemVariants}
-                    whileHover={{ 
-                      color: "#60A5FA",
-                      x: 8,
-                      transition: { duration: 0.3 }
-                    }}
                   >
-                    {service}
+                    <Link href={service.link}>
+                      <motion.span
+                        className="inline-block"
+                        whileHover={{ 
+                          color: "#60A5FA",
+                          x: 8,
+                          transition: { duration: 0.3 }
+                        }}
+                      >
+                        {service.name}
+                      </motion.span>
+                    </Link>
                   </motion.li>
                 ))}
               </motion.ul>
@@ -195,6 +215,20 @@ const Footer = () => {
                 viewport={{ once: true }}
               >
                 <motion.li variants={listItemVariants}>
+                  <Link href="/">
+                    <motion.span
+                      className="cursor-pointer inline-block"
+                      whileHover={{ 
+                        color: "#60A5FA",
+                        x: 8,
+                        transition: { duration: 0.3 }
+                      }}
+                    >
+                      Home
+                    </motion.span>
+                  </Link>
+                </motion.li>
+                <motion.li variants={listItemVariants}>
                   <Link href="/about">
                     <motion.span
                       className="cursor-pointer inline-block"
@@ -209,7 +243,7 @@ const Footer = () => {
                   </Link>
                 </motion.li>
                 <motion.li variants={listItemVariants}>
-                  <Link href="/">
+                  <Link href="/services">
                     <motion.span
                       className="cursor-pointer inline-block"
                       whileHover={{ 
@@ -218,7 +252,21 @@ const Footer = () => {
                         transition: { duration: 0.3 }
                       }}
                     >
-                      Home
+                      Our Services
+                    </motion.span>
+                  </Link>
+                </motion.li>
+                <motion.li variants={listItemVariants}>
+                  <Link href="/team">
+                    <motion.span
+                      className="cursor-pointer inline-block"
+                      whileHover={{ 
+                        color: "#60A5FA",
+                        x: 8,
+                        transition: { duration: 0.3 }
+                      }}
+                    >
+                      Our Team
                     </motion.span>
                   </Link>
                 </motion.li>
@@ -247,6 +295,21 @@ const Footer = () => {
                     }}
                   >
                     Email Us
+                  </motion.a>
+                </motion.li>
+                <motion.li variants={listItemVariants}>
+                  <motion.a 
+                    href="https://wa.me/919821575784"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer inline-block"
+                    whileHover={{ 
+                      color: "#60A5FA",
+                      x: 8,
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    WhatsApp Us
                   </motion.a>
                 </motion.li>
               </motion.ul>
