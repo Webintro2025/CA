@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
 import Link from 'next/link'
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,6 +26,22 @@ const Navbar = () => {
       setIsScrolled(false);
     }
   });
+
+  // Updated services list
+  const services = [
+    'Company Registration',
+    'LLP Registration', 
+    'Partnership Firm Registration',
+    'Sole Proprietorship Registration',
+    'MSME Registration',
+    'Startupindia Registration',
+    'Society Registration',
+    'Trust Registration',
+    'Import Export Code Registration',
+    'GST Registration',
+    'GST Return Filing',
+    'Bookkeeping Services'
+  ];
 
   // Animation variants
   const navVariants = {
@@ -113,19 +130,6 @@ const Navbar = () => {
     }
   };
 
-  const bannerVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        delay: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
     <>
       {/* Original Navbar */}
@@ -174,24 +178,21 @@ const Navbar = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              <motion.span
-                className="relative"
-                whileHover={{ y: -2 }}
-                transition={{ duration: 0.3 }}
-              >
-                Home
-                <motion.div
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-gray-500"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
+              <Link href="/">
+                <motion.span
+                  className="relative"
+                  whileHover={{ y: -2 }}
                   transition={{ duration: 0.3 }}
-                />
-              </motion.span>
-              <motion.i 
-                className="fas fa-caret-down ml-1 text-blue-600"
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-              ></motion.i>
+                >
+                  Home
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-gray-500"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.span>
+              </Link>
             </motion.li>
             <motion.li 
               className="text-blue-600 cursor-pointer relative group"
@@ -202,24 +203,21 @@ const Navbar = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              <motion.span
-                className="relative"
-                whileHover={{ y: -2 }}
-                transition={{ duration: 0.3 }}
-              >
-                About Us
-                <motion.div
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-gray-500"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
+              <Link href="/about">
+                <motion.span
+                  className="relative"
+                  whileHover={{ y: -2 }}
                   transition={{ duration: 0.3 }}
-                />
-              </motion.span>
-              <motion.i 
-                className="fas fa-caret-down ml-1 text-blue-600"
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-              ></motion.i>
+                >
+                  About Us
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-gray-500"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.span>
+              </Link>
             </motion.li>
             <motion.li 
               className="cursor-pointer relative font-normal text-gray-700 z-[10000]"
@@ -252,56 +250,105 @@ const Navbar = () => {
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
               ></motion.i>
               
-              {/* Dropdown Menu */}
+              {/* Updated Dropdown Menu with Scroll */}
               <AnimatePresence>
                 {isServicesOpen && (
                   <motion.div
-                    className="absolute top-full left-0 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-[99999]"
+                    className="absolute top-full left-0 w-72 bg-white rounded-lg shadow-xl border border-gray-200 py-3 z-[99999]"
                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
                     style={{ zIndex: 99999 }}
                   >
-                    <motion.ul className="space-y-1">
-                      {[
-                        'Company Registration',
-                        'GST Registration',
-                        'Tax Planning',
-                        'Compliance Services',
-                        'Financial Advisory',
-                        'Audit Services',
-                        'Business Consulting',
-                        'Legal Documentation'
-                      ].map((service, index) => (
-                        <motion.li
-                          key={service}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ 
-                            duration: 0.2,
-                            delay: index * 0.05
-                          }}
-                          whileHover={{ 
-                            backgroundColor: "#EBF8FF",
-                            color: "#2563EB",
-                            x: 5
-                          }}
-                          className="px-4 py-2 text-sm text-gray-700 cursor-pointer transition-all duration-200"
-                        >
-                          <motion.div
-                            className="flex items-center space-x-2"
+                    {/* Header */}
+                    <motion.div 
+                      className="px-4 pb-2 mb-2 border-b border-gray-100"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.1 }}
+                    >
+                      <h3 className="text-sm font-semibold text-gray-800">Our Services</h3>
+                      <p className="text-xs text-gray-500">{services.length} Professional Services</p>
+                    </motion.div>
+
+                    {/* Scrollable Services List */}
+                    <motion.div 
+                      className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-gray-100"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <motion.ul className="space-y-1 px-2">
+                        {services.map((service, index) => (
+                          <motion.li
+                            key={service}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ 
+                              duration: 0.2,
+                              delay: index * 0.03
+                            }}
+                            whileHover={{ 
+                              backgroundColor: "#EBF8FF",
+                              color: "#2563EB",
+                              x: 8,
+                              scale: 1.02
+                            }}
+                            className="px-3 py-2.5 text-sm text-gray-700 cursor-pointer transition-all duration-200 rounded-md mx-1"
                           >
-                            <motion.span
-                              className="w-2 h-2 bg-blue-500 rounded-full"
-                              whileHover={{ scale: 1.3 }}
+                            <motion.div
+                              className="flex items-center space-x-3"
+                              whileHover={{ x: 2 }}
                               transition={{ duration: 0.2 }}
-                            />
-                            <span>{service}</span>
-                          </motion.div>
-                        </motion.li>
-                      ))}
-                    </motion.ul>
+                            >
+                              <motion.span
+                                className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"
+                                whileHover={{ 
+                                  scale: 1.4,
+                                  backgroundColor: "#1e40af"
+                                }}
+                                transition={{ duration: 0.2 }}
+                                animate={{
+                                  scale: [1, 1.1, 1],
+                                  opacity: [0.7, 1, 0.7]
+                                }}
+                                style={{
+                                  animationDelay: `${index * 0.1}s`,
+                                  animationDuration: '2s',
+                                  animationIterationCount: 'infinite'
+                                }}
+                              />
+                              <span className="leading-tight">{service}</span>
+                              <motion.i 
+                                className="fas fa-arrow-right text-xs ml-auto opacity-0 group-hover:opacity-100"
+                                initial={{ x: -10, opacity: 0 }}
+                                whileHover={{ x: 0, opacity: 1 }}
+                                transition={{ duration: 0.2 }}
+                              />
+                            </motion.div>
+                          </motion.li>
+                        ))}
+                      </motion.ul>
+                    </motion.div>
+
+                    {/* Footer */}
+                    <motion.div 
+                      className="px-4 pt-3 mt-2 border-t border-gray-100"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <motion.button
+                        className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 rounded-md text-sm font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-200"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => window.open('https://wa.me/919821575784', '_blank')}
+                      >
+                        <i className="fas fa-phone mr-2"></i>
+                        Get Free Consultation
+                      </motion.button>
+                    </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -315,24 +362,21 @@ const Navbar = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              <motion.span
-                className="relative"
-                whileHover={{ y: -2 }}
-                transition={{ duration: 0.3 }}
-              >
-                Contact Us
-                <motion.div
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-gray-500 to-blue-500"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
+              <Link href="/contact">
+                <motion.span
+                  className="relative"
+                  whileHover={{ y: -2 }}
                   transition={{ duration: 0.3 }}
-                />
-              </motion.span>
-              <motion.i 
-                className="fas fa-caret-down ml-1"
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-              ></motion.i>
+                >
+                  Contact Us
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-gray-500 to-blue-500"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.span>
+              </Link>
             </motion.li>
           </motion.ul>
           <motion.div 
@@ -413,9 +457,14 @@ const Navbar = () => {
               transition={{ duration: 0.3 }}
             >
               <motion.ul className="px-4 py-4 space-y-3">
-                {['Home', 'About Us', 'Our Services', 'Contact Us'].map((item, index) => (
+                {[
+                  { name: 'Home', href: '/' },
+                  { name: 'About Us', href: '/about' },
+                  { name: 'Our Services', href: '#services' },
+                  { name: 'Contact Us', href: '/contact' }
+                ].map((item, index) => (
                   <motion.li
-                    key={item}
+                    key={item.name}
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: index * 0.1, duration: 0.3 }}
@@ -426,7 +475,9 @@ const Navbar = () => {
                       transition: { duration: 0.3 }
                     }}
                   >
-                    {item}
+                    <Link href={item.href}>
+                      {item.name}
+                    </Link>
                   </motion.li>
                 ))}
                 <motion.li
@@ -469,7 +520,7 @@ const Navbar = () => {
         >
           {/* Sticky Navbar Logo */}
           <motion.div variants={stickyItemVariants}>
-            <Link href="#home" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
                 EAZY TAX
               </div>
@@ -488,7 +539,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link 
-                href="#home"
+                href="/"
                 className="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 relative group"
               >
                 <motion.span
@@ -513,7 +564,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link 
-                href="#about"
+                href="/about"
                 className="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 relative group"
               >
                 <motion.span
@@ -563,56 +614,105 @@ const Navbar = () => {
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
               ></motion.i>
               
-              {/* Dropdown Menu for Sticky Navbar */}
+              {/* Updated Dropdown Menu for Sticky Navbar with Scroll */}
               <AnimatePresence>
                 {isServicesOpen && (
                   <motion.div
-                    className="absolute top-full left-0 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-[99999]"
+                    className="absolute top-full left-0 w-72 bg-white rounded-lg shadow-xl border border-gray-200 py-3 z-[99999]"
                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
                     style={{ zIndex: 99999 }}
                   >
-                    <motion.ul className="space-y-1">
-                      {[
-                        'Company Registration',
-                        'GST Registration',
-                        'Tax Planning',
-                        'Compliance Services',
-                        'Financial Advisory',
-                        'Audit Services',
-                        'Business Consulting',
-                        'Legal Documentation'
-                      ].map((service, index) => (
-                        <motion.li
-                          key={service}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ 
-                            duration: 0.2,
-                            delay: index * 0.05
-                          }}
-                          whileHover={{ 
-                            backgroundColor: "#EBF8FF",
-                            color: "#2563EB",
-                            x: 5
-                          }}
-                          className="px-4 py-2 text-sm text-gray-700 cursor-pointer transition-all duration-200"
-                        >
-                          <motion.div
-                            className="flex items-center space-x-2"
+                    {/* Header */}
+                    <motion.div 
+                      className="px-4 pb-2 mb-2 border-b border-gray-100"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.1 }}
+                    >
+                      <h3 className="text-sm font-semibold text-gray-800">Our Services</h3>
+                      <p className="text-xs text-gray-500">{services.length} Professional Services</p>
+                    </motion.div>
+
+                    {/* Scrollable Services List */}
+                    <motion.div 
+                      className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-gray-100"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <motion.ul className="space-y-1 px-2">
+                        {services.map((service, index) => (
+                          <motion.li
+                            key={service}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ 
+                              duration: 0.2,
+                              delay: index * 0.03
+                            }}
+                            whileHover={{ 
+                              backgroundColor: "#EBF8FF",
+                              color: "#2563EB",
+                              x: 8,
+                              scale: 1.02
+                            }}
+                            className="px-3 py-2.5 text-sm text-gray-700 cursor-pointer transition-all duration-200 rounded-md mx-1"
                           >
-                            <motion.span
-                              className="w-2 h-2 bg-blue-500 rounded-full"
-                              whileHover={{ scale: 1.3 }}
+                            <motion.div
+                              className="flex items-center space-x-3"
+                              whileHover={{ x: 2 }}
                               transition={{ duration: 0.2 }}
-                            />
-                            <span>{service}</span>
-                          </motion.div>
-                        </motion.li>
-                      ))}
-                    </motion.ul>
+                            >
+                              <motion.span
+                                className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"
+                                whileHover={{ 
+                                  scale: 1.4,
+                                  backgroundColor: "#1e40af"
+                                }}
+                                transition={{ duration: 0.2 }}
+                                animate={{
+                                  scale: [1, 1.1, 1],
+                                  opacity: [0.7, 1, 0.7]
+                                }}
+                                style={{
+                                  animationDelay: `${index * 0.1}s`,
+                                  animationDuration: '2s',
+                                  animationIterationCount: 'infinite'
+                                }}
+                              />
+                              <span className="leading-tight">{service}</span>
+                              <motion.i 
+                                className="fas fa-arrow-right text-xs ml-auto opacity-0 group-hover:opacity-100"
+                                initial={{ x: -10, opacity: 0 }}
+                                whileHover={{ x: 0, opacity: 1 }}
+                                transition={{ duration: 0.2 }}
+                              />
+                            </motion.div>
+                          </motion.li>
+                        ))}
+                      </motion.ul>
+                    </motion.div>
+
+                    {/* Footer */}
+                    <motion.div 
+                      className="px-4 pt-3 mt-2 border-t border-gray-100"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <motion.button
+                        className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 rounded-md text-sm font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-200"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => window.open('https://wa.me/919821575784', '_blank')}
+                      >
+                        <i className="fas fa-phone mr-2"></i>
+                        Get Free Consultation
+                      </motion.button>
+                    </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -624,7 +724,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link 
-                href="#contact"
+                href="/contact"
                 className="text-gray-700 hover:text-gray-900 font-semibold transition-colors duration-200 relative group"
               >
                 <motion.span
