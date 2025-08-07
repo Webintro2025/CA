@@ -73,14 +73,14 @@ const GetInTouch = () => {
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <div className="flex flex-col lg:flex-row gap-8 sm:gap-10">
+      <div className="flex flex-col lg:flex-row gap-2 sm:gap-4 md:gap-6 lg:gap-8">
         {/* Contact Info Section - Left to Right Animation */}
         <motion.div 
-          className="lg:w-1/2 flex flex-col justify-center"
+          className="w-full lg:w-1/2 flex flex-col justify-center"
           variants={leftToRightVariants}
         >
           <motion.h2 
-            className="text-xl sm:text-2xl md:text-4xl font-extrabold text-slate-800 mb-5 sm:mb-8 text-left"
+            className="text-xs sm:text-sm md:text-lg lg:text-2xl font-extrabold text-slate-800 mb-2 sm:mb-3 md:mb-5 lg:mb-7 text-left"
             variants={itemVariants}
             whileHover={{ 
               scale: 1.02,
@@ -91,7 +91,7 @@ const GetInTouch = () => {
             Contact Information
           </motion.h2>
           <motion.div 
-            className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 border-l-4 sm:border-l-8 border-blue-500 shadow-xl rounded-2xl p-4 sm:p-6 md:p-10 max-w-xl mx-auto flex flex-col gap-4 sm:gap-7"
+            className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 border-l-2 sm:border-l-4 md:border-l-8 border-blue-500 shadow-xl rounded-2xl p-2 sm:p-3 md:p-5 max-w-xl mx-auto flex flex-col gap-2 sm:gap-3 md:gap-5"
             variants={itemVariants}
             whileHover={{ 
               scale: 1.02,
@@ -120,9 +120,9 @@ const GetInTouch = () => {
                 <i className="fas fa-building"></i>
               </motion.span>
               <div>
-                <div className="text-slate-600 font-semibold text-xs sm:text-sm">Company Name</div>
+                <div className="text-slate-600 font-semibold text-[10px] sm:text-xs md:text-sm">Company Name</div>
                 <motion.div 
-                  className="text-slate-800 font-bold text-sm sm:text-base md:text-lg"
+                  className="text-slate-800 font-bold text-[10px] sm:text-xs md:text-base"
                   whileHover={{ 
                     color: "#1e40af",
                     transition: { duration: 0.3 }
@@ -154,9 +154,9 @@ const GetInTouch = () => {
                 <i className="fas fa-envelope"></i>
               </motion.span>
               <div>
-                <div className="text-slate-600 font-semibold text-xs sm:text-sm">Mail ID</div>
+                <div className="text-slate-600 font-semibold text-[10px] sm:text-xs md:text-sm">Mail ID</div>
                 <motion.div 
-                  className="text-slate-800 font-bold text-sm sm:text-base md:text-lg"
+                  className="text-slate-800 font-bold text-[10px] sm:text-xs md:text-base"
                   whileHover={{ 
                     color: "#1e40af",
                     transition: { duration: 0.3 }
@@ -188,9 +188,9 @@ const GetInTouch = () => {
                 <i className="fas fa-map-marker-alt"></i>
               </motion.span>
               <div>
-                <div className="text-slate-600 font-semibold text-xs sm:text-sm">Address</div>
+                <div className="text-slate-600 font-semibold text-[10px] sm:text-xs md:text-sm">Address</div>
                 <motion.div 
-                  className="text-slate-800 font-bold text-sm sm:text-base md:text-lg"
+                  className="text-slate-800 font-bold text-[10px] sm:text-xs md:text-base"
                   whileHover={{ 
                     color: "#1e40af",
                     transition: { duration: 0.3 }
@@ -222,9 +222,9 @@ const GetInTouch = () => {
                 <i className="fas fa-phone-alt"></i>
               </motion.span>
               <div>
-                <div className="text-slate-600 font-semibold text-xs sm:text-sm">Phone Number</div>
+                <div className="text-slate-600 font-semibold text-[10px] sm:text-xs md:text-sm">Phone Number</div>
                 <motion.div 
-                  className="text-slate-800 font-bold text-sm sm:text-base md:text-lg"
+                  className="text-slate-800 font-bold text-[10px] sm:text-xs md:text-base"
                   whileHover={{ 
                     color: "#1e40af",
                     transition: { duration: 0.3 }
@@ -256,9 +256,9 @@ const GetInTouch = () => {
                 <i className="fas fa-id-card"></i>
               </motion.span>
               <div>
-                <div className="text-slate-600 font-semibold text-xs sm:text-sm">GST Number</div>
+                <div className="text-slate-600 font-semibold text-[10px] sm:text-xs md:text-sm">GST Number</div>
                 <motion.div 
-                  className="text-slate-800 font-bold text-sm sm:text-base md:text-lg"
+                  className="text-slate-800 font-bold text-[10px] sm:text-xs md:text-base"
                   whileHover={{ 
                     color: "#1e40af",
                     transition: { duration: 0.3 }
@@ -273,11 +273,11 @@ const GetInTouch = () => {
 
         {/* Get In Touch Section - Right to Left Animation */}
         <motion.div 
-          className="lg:w-1/2"
+          className="w-full lg:w-1/2"
           variants={rightToLeftVariants}
         >
           <motion.h2 
-            className="text-xl sm:text-2xl md:text-4xl font-extrabold text-blue-600 mb-4 sm:mb-6"
+            className="text-xs sm:text-sm md:text-lg lg:text-2xl font-extrabold text-blue-600 mb-2 sm:mb-3 md:mb-5 lg:mb-7"
             variants={itemVariants}
             whileHover={{ 
               scale: 1.02,
@@ -290,7 +290,7 @@ const GetInTouch = () => {
           <motion.form
             action="#"
             method="POST"
-            className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 p-4 mt-14 sm:p-8 border border-blue-400/40 max-w-lg rounded-2xl shadow-xl"
+            className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 p-2 sm:p-3 md:p-5 mt-4 sm:mt-6 md:mt-10 lg:mt-14 border border-blue-400/40 max-w-lg rounded-2xl shadow-xl"
             variants={itemVariants}
             whileHover={{ 
               scale: 1.02,
@@ -302,7 +302,7 @@ const GetInTouch = () => {
               type="text"
               name="name"
               placeholder="Your Name:"
-              className="w-full mb-4 sm:mb-6 px-3 sm:px-4 py-2 sm:py-3 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded text-xs sm:text-sm text-slate-700 placeholder-slate-400 bg-white transition-all duration-300"
+              className="w-full mb-2 sm:mb-3 md:mb-4 px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded text-[10px] sm:text-xs md:text-sm text-slate-700 placeholder-slate-400 bg-white transition-all duration-300"
               variants={itemVariants}
               whileFocus={{ 
                 scale: 1.02,
@@ -314,7 +314,7 @@ const GetInTouch = () => {
               type="email"
               name="email"
               placeholder="Your Email:"
-              className="w-full mb-4 sm:mb-6 px-3 sm:px-4 py-2 sm:py-3 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded text-xs sm:text-sm text-slate-700 placeholder-slate-400 bg-white transition-all duration-300"
+              className="w-full mb-2 sm:mb-3 md:mb-4 px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded text-[10px] sm:text-xs md:text-sm text-slate-700 placeholder-slate-400 bg-white transition-all duration-300"
               variants={itemVariants}
               whileFocus={{ 
                 scale: 1.02,
@@ -326,7 +326,7 @@ const GetInTouch = () => {
               type="text"
               name="message"
               placeholder="Your Message:"
-              className="w-full mb-4 sm:mb-6 px-3 sm:px-4 py-2 sm:py-3 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded text-xs sm:text-sm text-slate-700 placeholder-slate-400 bg-white transition-all duration-300"
+              className="w-full mb-2 sm:mb-3 md:mb-4 px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded text-[10px] sm:text-xs md:text-sm text-slate-700 placeholder-slate-400 bg-white transition-all duration-300"
               variants={itemVariants}
               whileFocus={{ 
                 scale: 1.02,
@@ -338,7 +338,7 @@ const GetInTouch = () => {
               type="tel"
               name="phone"
               placeholder="Your Phone Number:"
-              className="w-full mb-6 sm:mb-8 px-3 sm:px-4 py-2 sm:py-3 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded text-xs sm:text-sm text-slate-700 placeholder-slate-400 bg-white transition-all duration-300"
+              className="w-full mb-3 sm:mb-4 md:mb-6 px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded text-[10px] sm:text-xs md:text-sm text-slate-700 placeholder-slate-400 bg-white transition-all duration-300"
               variants={itemVariants}
               whileFocus={{ 
                 scale: 1.02,
@@ -348,7 +348,7 @@ const GetInTouch = () => {
             />
             <motion.button
               type="submit"
-              className="bg-gradient-to-r from-blue-600 to-slate-700 text-white font-bold px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:from-blue-700 hover:to-slate-800 transition-all duration-300 text-xs sm:text-sm shadow-lg w-full"
+              className="bg-gradient-to-r from-blue-600 to-slate-700 text-white font-bold px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-lg hover:from-blue-700 hover:to-slate-800 transition-all duration-300 text-[10px] sm:text-xs md:text-sm shadow-lg w-full"
               variants={itemVariants}
               whileHover={{ 
                 scale: 1.05,
@@ -383,7 +383,7 @@ const GetInTouch = () => {
 
       {/* Bottom Banner */}
       <motion.section 
-        className="bg-gradient-to-r from-slate-800 via-blue-900 to-slate-800 py-4 sm:py-6 px-2 sm:px-6 mt-8 sm:mt-12 rounded-2xl"
+        className="bg-gradient-to-r from-slate-800 via-blue-900 to-slate-800 py-2 sm:py-3 md:py-4 px-1 sm:px-2 md:px-4 mt-4 sm:mt-6 md:mt-8 rounded-2xl"
         variants={itemVariants}
         whileHover={{ 
           scale: 1.01,
@@ -392,11 +392,11 @@ const GetInTouch = () => {
         }}
       >
         <motion.div 
-          className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4"
+          className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-2 md:gap-3"
           variants={containerVariants}
         >
           <motion.p 
-            className="text-white text-sm sm:text-lg font-light max-w-xl text-center sm:text-left"
+            className="text-white text-[10px] sm:text-xs md:text-sm font-light max-w-xl text-center sm:text-left"
             variants={leftToRightVariants}
             whileHover={{ 
               scale: 1.02,
@@ -423,7 +423,7 @@ const GetInTouch = () => {
             </motion.span>
           </motion.p>
           <motion.button 
-            className="bg-gradient-to-r from-blue-500 to-slate-600 text-white font-bold px-4 sm:px-6 py-2 sm:py-3 rounded-lg whitespace-nowrap hover:from-blue-600 hover:to-slate-700 transition-all duration-300 text-xs sm:text-sm shadow-lg"
+            className="bg-gradient-to-r from-blue-500 to-slate-600 text-white font-bold px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-lg whitespace-nowrap hover:from-blue-600 hover:to-slate-700 transition-all duration-300 text-[10px] sm:text-xs md:text-sm shadow-lg"
             variants={rightToLeftVariants}
             whileHover={{ 
               scale: 1.05,
@@ -434,7 +434,7 @@ const GetInTouch = () => {
             onClick={() => window.open('https://wa.me/919821575784', '_blank')}
           >
             <motion.span
-              className="flex items-center gap-2"
+              className="flex items-center gap-1 sm:gap-2"
               whileHover={{ x: 5 }}
               transition={{ duration: 0.3 }}
             >

@@ -6,7 +6,7 @@ const Slides = () => {
   // Updated images from public folder
   const images = [
     { src: '/Bookkeeping Services.png', alt: 'Bookkeeping Services' },
-    { src: '/companyregistration.png', alt: 'Company Registration' },
+    { src: '/companyregistartion.png', alt: 'Company Registration' },
     { src: '/GST Return Filing.png', alt: 'GST Return Filing' },
     { src: '/gstregistration.png', alt: 'GST Registration' },
     { src: '/Import Export Code Registration.png', alt: 'Import Export Code Registration' },
@@ -91,15 +91,15 @@ const Slides = () => {
                 variants={slideVariants}
                 whileHover={{
                   scale: 1.15,
-                  y: -15,
+                  y: -10,
                   zIndex: 10,
                   transition: { duration: 0.4 }
                 }}
               >
                 <motion.div
-                  className="w-[350px] h-[220px] rounded-2xl overflow-hidden shadow-xl border-3 border-white group-hover:border-blue-400 transition-all duration-300"
+                  className="w-[200px] h-[100px] rounded-xl overflow-hidden shadow-xl border-2 border-white group-hover:border-blue-400 transition-all duration-300"
                   whileHover={{
-                    boxShadow: "0 25px 50px rgba(59, 130, 246, 0.4)",
+                    boxShadow: "0 15px 30px rgba(59, 130, 246, 0.3)",
                     transition: { duration: 0.3 }
                   }}
                 >
@@ -109,7 +109,7 @@ const Slides = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                     whileHover={{
-                      filter: "brightness(1.15) saturate(1.3) contrast(1.1)",
+                      filter: "brightness(1.1) saturate(1.2)",
                       transition: { duration: 0.3 }
                     }}
                   />
@@ -177,15 +177,15 @@ const Slides = () => {
                 variants={slideVariants}
                 whileHover={{
                   scale: 1.15,
-                  y: -15,
+                  y: -10,
                   zIndex: 10,
                   transition: { duration: 0.4 }
                 }}
               >
                 <motion.div
-                  className="w-[350px] h-[220px] rounded-2xl overflow-hidden shadow-xl border-3 border-white group-hover:border-blue-400 transition-all duration-300"
+                  className="w-[200px] h-[100px] rounded-xl overflow-hidden shadow-xl border-2 border-white group-hover:border-blue-400 transition-all duration-300"
                   whileHover={{
-                    boxShadow: "0 25px 50px rgba(59, 130, 246, 0.4)",
+                    boxShadow: "0 15px 30px rgba(59, 130, 246, 0.3)",
                     transition: { duration: 0.3 }
                   }}
                 >
@@ -195,7 +195,7 @@ const Slides = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                     whileHover={{
-                      filter: "brightness(1.15) saturate(1.3) contrast(1.1)",
+                      filter: "brightness(1.1) saturate(1.2)",
                       transition: { duration: 0.3 }
                     }}
                   />

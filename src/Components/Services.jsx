@@ -165,9 +165,9 @@ const Services = () => {
   ];
 
   return (
-    <div className="bg-[#F9FAFB] text-[#111827] py-12 md:py-20">
+    <div className="bg-[#F9FAFB] text-[#111827] py-6 sm:py-10 md:py-16">
       <motion.main 
-        className="max-w-7xl mx-auto px-6"
+        className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
@@ -175,18 +175,18 @@ const Services = () => {
       >
         {/* Header Section */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
           variants={itemVariants}
         >
           <motion.h1 
-            className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-sky-400 to-gray-600 bg-clip-text text-transparent"
+            className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-sky-400 to-gray-600 bg-clip-text text-transparent"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
             Our Professional Services
           </motion.h1>
           <motion.p 
-            className="text-lg leading-relaxed max-w-3xl mx-auto text-gray-600"
+            className="text-xs sm:text-sm md:text-base leading-relaxed max-w-3xl mx-auto text-gray-600"
             variants={itemVariants}
           >
             We provide comprehensive business registration and compliance services to help your business grow with complete legal protection and professional expertise.
@@ -194,20 +194,20 @@ const Services = () => {
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-16 mb-8 sm:mb-12 md:mb-16">
           <motion.section 
             className="lg:col-span-6"
             variants={itemVariants}
           >
             <motion.h2 
-              className="text-2xl font-extrabold leading-tight mb-4"
+              className="text-base sm:text-lg md:text-2xl font-extrabold leading-tight mb-2 sm:mb-3 md:mb-4"
               whileHover={{ color: "#0EA5E9" }}
               transition={{ duration: 0.3 }}
             >
               Advantages of Registering a Company
             </motion.h2>
             <motion.p 
-              className="text-base leading-relaxed max-w-xl mb-10"
+              className="text-xs sm:text-sm md:text-base leading-relaxed max-w-xl mb-4 sm:mb-6 md:mb-10"
               variants={itemVariants}
             >
               Registering a private limited company offers various benefits to the shareholders, including a flexible management structure, legal identity and limited liability protection. Let us explore some of the most
@@ -215,7 +215,7 @@ const Services = () => {
             </motion.p>
             <motion.img 
               alt="Illustration of a person in a yellow hoodie holding a pencil, looking at a computer screen with a long document and icons for information and checkmark" 
-              className="w-full max-w-xl rounded-lg shadow-lg" 
+              className="w-full max-w-xs sm:max-w-md md:max-w-xl rounded-lg shadow-lg mx-auto" 
               height="400" 
               loading="lazy" 
               src="https://storage.googleapis.com/a1aa/image/a4b4259c-e5b3-4d38-d3a0-6929c6ed87f0.jpg" 
@@ -234,47 +234,46 @@ const Services = () => {
             className="lg:col-span-6"
             variants={containerVariants}
           >
-            <motion.div className="flex items-center justify-between mb-6">
+            <motion.div className="flex items-center justify-between mb-4 sm:mb-6">
               <motion.h2 
-                className="text-2xl font-extrabold leading-tight"
+                className="text-base sm:text-lg md:text-2xl font-extrabold leading-tight"
                 variants={itemVariants}
                 whileHover={{ color: "#0EA5E9" }}
               >
                 Our Professional Services
               </motion.h2>
-              
               {/* Scroll Controls */}
               <motion.div 
-                className="flex gap-2"
+                className="flex gap-1 sm:gap-2"
                 variants={itemVariants}
               >
                 <motion.button
                   onClick={scrollToTop}
-                  className="p-2 bg-sky-100 hover:bg-sky-200 rounded-full transition-colors duration-200"
+                  className="p-1.5 sm:p-2 bg-sky-100 hover:bg-sky-200 rounded-full transition-colors duration-200"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   title="Scroll to top"
                 >
                   <motion.i 
-                    className="fas fa-chevron-up text-sky-600 text-sm"
+                    className="fas fa-chevron-up text-sky-600 text-xs sm:text-sm"
                     whileHover={{ y: -2 }}
                   />
                 </motion.button>
                 <motion.button
                   onClick={scrollToBottom}
-                  className="p-2 bg-sky-100 hover:bg-sky-200 rounded-full transition-colors duration-200"
+                  className="p-1.5 sm:p-2 bg-sky-100 hover:bg-sky-200 rounded-full transition-colors duration-200"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   title="Scroll to bottom"
                 >
                   <motion.i 
-                    className="fas fa-chevron-down text-sky-600 text-sm"
+                    className="fas fa-chevron-down text-sky-600 text-xs sm:text-sm"
                     whileHover={{ y: 2 }}
                   />
                 </motion.button>
                 <motion.button
                   onClick={() => setIsAutoScrolling(!isAutoScrolling)}
-                  className={`p-2 rounded-full transition-colors duration-200 ${
+                  className={`p-1.5 sm:p-2 rounded-full transition-colors duration-200 ${
                     isAutoScrolling 
                       ? 'bg-sky-100 hover:bg-sky-200' 
                       : 'bg-gray-100 hover:bg-gray-200'
@@ -286,7 +285,7 @@ const Services = () => {
                   <motion.i 
                     className={`fas ${
                       isAutoScrolling ? 'fa-pause' : 'fa-play'
-                    } text-sm ${
+                    } text-xs sm:text-sm ${
                       isAutoScrolling ? 'text-sky-600' : 'text-gray-600'
                     }`}
                     animate={{ 
@@ -301,10 +300,9 @@ const Services = () => {
                 </motion.button>
               </motion.div>
             </motion.div>
-            
             <motion.div 
               ref={scrollContainerRef}
-              className="max-h-[600px] overflow-y-auto pr-4 space-y-4 scrollbar-thin scrollbar-thumb-sky-400 scrollbar-track-gray-200 relative"
+              className="max-h-[400px] sm:max-h-[500px] md:max-h-[600px] overflow-y-auto pr-2 sm:pr-4 space-y-3 sm:space-y-4 scrollbar-thin scrollbar-thumb-sky-400 scrollbar-track-gray-200 relative"
               variants={containerVariants}
               onScroll={handleScroll}
               onMouseEnter={() => setIsAutoScrolling(false)}
@@ -340,25 +338,25 @@ const Services = () => {
               {services.map((service, index) => (
                 <motion.div
                   key={service.title}
-                  className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm"
+                  className="bg-white border border-gray-200 rounded-lg p-3 sm:p-4 shadow-sm"
                   variants={serviceCardVariants}
                   whileHover={{ 
                     scale: 1.02,
                     boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-                    borderColor: "#0EA5E9",
+                    borderColor: "0EA5E9",
                     x: 5
                   }}
                   transition={{ duration: 0.3 }}
                   custom={index}
                 >
                   <motion.div 
-                    className="flex items-start gap-3"
+                    className="flex items-start gap-2 sm:gap-3"
                     whileHover={{ x: 2 }}
                     transition={{ duration: 0.2 }}
                   >
                     <motion.img 
                       alt="Service icon" 
-                      className="flex-shrink-0 w-10 h-10" 
+                      className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10" 
                       src={service.icon}
                       whileHover={{ 
                         rotate: 360,
@@ -368,14 +366,14 @@ const Services = () => {
                     />
                     <div className="flex-1">
                       <motion.h3 
-                        className="text-base font-bold leading-snug mb-2 text-gray-800"
+                        className="text-xs sm:text-sm md:text-base font-bold leading-snug mb-1 sm:mb-2 text-gray-800"
                         whileHover={{ color: "#0EA5E9" }}
                         transition={{ duration: 0.2 }}
                       >
                         {service.title}
                       </motion.h3>
                       <motion.p 
-                        className="text-xs leading-relaxed text-gray-600 line-clamp-3"
+                        className="text-xs sm:text-xs md:text-sm leading-relaxed text-gray-600 line-clamp-3"
                         whileHover={{ color: "#374151" }}
                         transition={{ duration: 0.2 }}
                       >
@@ -383,21 +381,20 @@ const Services = () => {
                       </motion.p>
                     </div>
                   </motion.div>
-                  
                   <motion.div 
-                    className="mt-3 pt-3 border-t border-gray-100"
+                    className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-gray-100"
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                   >
                     <motion.button
-                      className="text-sky-600 font-semibold text-xs hover:text-sky-800 flex items-center gap-1"
+                      className="text-sky-600 font-semibold text-xs sm:text-sm hover:text-sky-800 flex items-center gap-1"
                       whileHover={{ x: 3 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       Learn More 
                       <motion.i 
-                        className="fas fa-arrow-right text-xs"
+                        className="fas fa-arrow-right text-xs sm:text-sm"
                         whileHover={{ x: 2 }}
                       />
                     </motion.button>
@@ -410,11 +407,11 @@ const Services = () => {
 
         {/* Call to Action */}
         <motion.div 
-          className="text-center mt-16"
+          className="text-center mt-10 sm:mt-12 md:mt-16"
           variants={itemVariants}
         >
           <motion.div 
-            className="bg-gradient-to-r from-sky-400 to-gray-600 rounded-lg p-8 text-white"
+            className="bg-gradient-to-r from-sky-400 to-gray-600 rounded-lg p-4 sm:p-6 md:p-8 text-white"
             whileHover={{ 
               scale: 1.02,
               boxShadow: "0 20px 40px rgba(14, 165, 233, 0.2)"
@@ -422,19 +419,19 @@ const Services = () => {
             transition={{ duration: 0.3 }}
           >
             <motion.h3 
-              className="text-2xl font-bold mb-4"
+              className="text-base sm:text-lg md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4"
               variants={itemVariants}
             >
               Ready to Start Your Business?
             </motion.h3>
             <motion.p 
-              className="text-lg mb-6 opacity-90"
+              className="text-xs sm:text-sm md:text-base mb-3 sm:mb-4 md:mb-6 opacity-90"
               variants={itemVariants}
             >
               Get expert guidance for your business registration and compliance needs
             </motion.p>
             <motion.button 
-              className="bg-white text-sky-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors duration-200"
+              className="bg-white text-sky-600 px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-md font-semibold text-xs sm:text-sm md:text-base hover:bg-gray-100 transition-colors duration-200"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 10px 25px rgba(255,255,255,0.2)"

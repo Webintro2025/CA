@@ -72,9 +72,9 @@ const Teams = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-sky-50 py-16 md:py-24">
+    <div className="bg-gradient-to-br from-gray-50 to-sky-50 py-8 sm:py-12 md:py-20">
       <motion.div 
-        className="max-w-7xl mx-auto px-6"
+        className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
@@ -82,18 +82,18 @@ const Teams = () => {
       >
         {/* Header Section */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
           variants={cardVariants}
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-sky-400 to-gray-600 bg-clip-text text-transparent"
+            className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-sky-400 to-gray-600 bg-clip-text text-transparent"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
             Our Partners & Their Expertise
           </motion.h2>
           <motion.p 
-            className="text-lg leading-relaxed max-w-3xl mx-auto text-gray-600"
+            className="text-xs sm:text-sm md:text-base leading-relaxed max-w-3xl mx-auto text-gray-600"
             variants={cardVariants}
           >
             Meet our experienced team of Chartered Accountants who bring decades of combined expertise to serve your business needs
@@ -102,7 +102,7 @@ const Teams = () => {
 
         {/* Partners Grid */}
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
           variants={containerVariants}
         >
           {partners.map((partner, index) => (
@@ -113,7 +113,7 @@ const Teams = () => {
               custom={index}
             >
               <motion.div
-                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 h-full relative overflow-hidden"
+                className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-gray-200 h-full relative overflow-hidden"
                 whileHover={{ 
                   scale: 1.03,
                   boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
@@ -137,13 +137,13 @@ const Teams = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <motion.h3 
-                      className="text-2xl font-bold text-gray-800 mb-2 group-hover:bg-gradient-to-r group-hover:from-sky-500 group-hover:to-gray-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300"
+                      className="text-base sm:text-lg md:text-2xl font-bold text-gray-800 mb-1 sm:mb-2 group-hover:bg-gradient-to-r group-hover:from-sky-500 group-hover:to-gray-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300"
                       whileHover={{ scale: 1.02 }}
                     >
                       {partner.name}
                     </motion.h3>
                     <motion.p 
-                      className="text-sky-600 font-semibold text-sm"
+                      className="text-sky-600 font-semibold text-xs sm:text-sm"
                       whileHover={{ color: "#0EA5E9" }}
                     >
                       {partner.experience}
@@ -152,7 +152,7 @@ const Teams = () => {
 
                   {/* Description */}
                   <motion.p 
-                    className="text-gray-600 text-sm leading-relaxed mb-6 group-hover:text-gray-700 transition-colors duration-300"
+                    className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 md:mb-6 group-hover:text-gray-700 transition-colors duration-300"
                     whileHover={{ x: 2 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -161,16 +161,16 @@ const Teams = () => {
 
                   {/* Expertise List */}
                   <motion.div 
-                    className="mb-6"
+                    className="mb-3 sm:mb-4 md:mb-6"
                     variants={containerVariants}
                   >
                     <motion.h4 
-                      className="text-gray-800 font-semibold mb-3 text-sm"
+                      className="text-gray-800 font-semibold mb-1 sm:mb-2 text-xs sm:text-sm"
                       whileHover={{ color: "#0EA5E9" }}
                     >
                       Core Expertise:
                     </motion.h4>
-                    <motion.ul className="space-y-2">
+                    <motion.ul className="space-y-1 sm:space-y-2">
                       {partner.expertise.map((skill, skillIndex) => (
                         <motion.li
                           key={skill}
@@ -225,11 +225,11 @@ const Teams = () => {
 
         {/* Call to Action */}
         <motion.div 
-          className="text-center mt-16"
+          className="text-center mt-10 sm:mt-12 md:mt-16"
           variants={cardVariants}
         >
           <motion.div 
-            className="bg-gradient-to-r from-sky-400 to-gray-600 rounded-2xl p-8 text-white relative overflow-hidden"
+            className="bg-gradient-to-r from-sky-400 to-gray-600 rounded-2xl p-4 sm:p-6 md:p-8 text-white relative overflow-hidden"
             whileHover={{ 
               scale: 1.02,
               boxShadow: "0 25px 50px rgba(14, 165, 233, 0.3)"
@@ -242,19 +242,19 @@ const Teams = () => {
             />
             <div className="relative z-10">
               <motion.h3 
-                className="text-2xl font-bold mb-4"
+                className="text-base sm:text-lg md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4"
                 variants={cardVariants}
               >
                 Ready to Work with Our Expert Team?
               </motion.h3>
               <motion.p 
-                className="text-lg mb-6 opacity-90"
+                className="text-xs sm:text-sm md:text-base mb-3 sm:mb-4 md:mb-6 opacity-90"
                 variants={cardVariants}
               >
                 Get personalized advice from our experienced Chartered Accountants
               </motion.p>
               <motion.button 
-                className="bg-white text-sky-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+                className="bg-white text-sky-600 px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:bg-gray-100 transition-colors duration-200 shadow-lg"
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: "0 15px 30px rgba(255,255,255,0.3)"

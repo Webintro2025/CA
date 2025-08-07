@@ -174,7 +174,7 @@ const HomeBanner = () => {
 
   return (
     <motion.div 
-      className="relative w-full h-[70vh] overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-800"
+      className="relative w-full h-[28vh] sm:h-[35vh] md:h-[60vh] lg:h-[70vh] overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-800"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -216,18 +216,18 @@ const HomeBanner = () => {
             {/* Text Content for First Banner */}
             {currentIndex === 0 && (
               <motion.div 
-                className="absolute inset-0 flex items-center justify-end pr-24 md:pr-16"
+                className="absolute inset-0 flex items-center justify-end pr-4 sm:pr-10 md:pr-24 lg:pr-16"
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
               >
                 <motion.div 
-                  className="max-w-lg text-left text-white"
+                  className="max-w-xs sm:max-w-md md:max-w-lg text-left text-white"
                   variants={textVariants}
                 >
                   {/* Tagline */}
                   <motion.h1 
-                    className="text-4xl md:text-6xl font-extrabold leading-tight mb-6"
+                    className="text-xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6"
                     variants={taglineVariants}
                     whileHover={{ 
                       scale: 1.02,
@@ -261,7 +261,7 @@ const HomeBanner = () => {
 
                   {/* Description */}
                   <motion.p 
-                    className="text-lg md:text-xl leading-relaxed mb-8 text-gray-100"
+                    className="text-xs sm:text-sm md:text-lg leading-relaxed mb-3 sm:mb-5 md:mb-8 text-gray-100"
                     variants={descriptionVariants}
                     whileHover={{ 
                       scale: 1.02,
@@ -290,7 +290,7 @@ const HomeBanner = () => {
                     transition={{ delay: 0.8, duration: 0.6 }}
                   >
                     <motion.button 
-                      className="bg-gradient-to-r from-sky-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg backdrop-blur-md"
+                      className="bg-gradient-to-r from-sky-500 to-blue-600 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-semibold text-xs sm:text-base md:text-lg shadow-lg backdrop-blur-md"
                       whileHover={{ 
                         scale: 1.05,
                         boxShadow: "0 20px 40px rgba(14, 165, 233, 0.4)",
@@ -314,7 +314,7 @@ const HomeBanner = () => {
                       }}
                     >
                       <motion.span 
-                        className="flex items-center gap-2"
+                        className="flex items-center gap-1 sm:gap-2"
                         whileHover={{ x: 5 }}
                         transition={{ duration: 0.2 }}
                       >
@@ -365,13 +365,13 @@ const HomeBanner = () => {
             {/* Text Content for Third Banner (GST Return Filing) */}
             {currentIndex === 2 && (
               <motion.div 
-                className="absolute inset-0 flex items-center justify-start pl-12 md:pl-20"
+                className="absolute inset-0 flex items-center justify-start pl-2 sm:pl-6 md:pl-12 lg:pl-20"
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
               >
                 <motion.div 
-                  className="max-w-md text-left text-white"
+                  className="max-w-xs sm:max-w-sm md:max-w-md text-left text-white"
                   variants={textVariants}
                 >
                   {/* Service Badge */}
@@ -401,7 +401,7 @@ const HomeBanner = () => {
 
                   {/* Tagline */}
                   <motion.h1 
-                    className="text-3xl md:text-5xl font-extrabold leading-tight mb-4"
+                    className="text-lg sm:text-2xl md:text-3xl lg:text-5xl font-extrabold leading-tight mb-2 sm:mb-3 md:mb-4"
                     variants={taglineVariants}
                     whileHover={{ 
                       scale: 1.02,
@@ -435,7 +435,7 @@ const HomeBanner = () => {
 
                   {/* Description */}
                   <motion.p 
-                    className="text-base md:text-lg leading-relaxed mb-6 text-blue-100"
+                    className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed mb-2 sm:mb-4 md:mb-6 text-blue-100"
                     variants={descriptionVariants}
                     whileHover={{ 
                       scale: 1.02,
@@ -492,7 +492,7 @@ const HomeBanner = () => {
                             delay: index * 0.2
                           }}
                         />
-                        <span className="text-xs text-blue-200">{feature}</span>
+                        <span className="text-[10px] sm:text-xs text-blue-200">{feature}</span>
                       </motion.div>
                     ))}
                   </motion.div>
@@ -504,7 +504,7 @@ const HomeBanner = () => {
                     transition={{ delay: 0.8, duration: 0.6 }}
                   >
                     <motion.button 
-                      className="bg-gradient-to-r from-black to-blue-600 text-white px-6 py-3 rounded-full font-semibold text-base shadow-lg backdrop-blur-md border border-blue-400/30"
+                      className="bg-gradient-to-r from-black to-blue-600 text-white px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full font-semibold text-xs sm:text-base md:text-lg shadow-lg backdrop-blur-md border border-blue-400/30"
                       whileHover={{ 
                         scale: 1.05,
                         boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)",
@@ -528,7 +528,7 @@ const HomeBanner = () => {
                       }}
                     >
                       <motion.span 
-                        className="flex items-center gap-2"
+                        className="flex items-center gap-1 sm:gap-2"
                         whileHover={{ x: -5 }}
                         transition={{ duration: 0.2 }}
                       >

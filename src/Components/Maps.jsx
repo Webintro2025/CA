@@ -135,7 +135,7 @@ const Maps = () => {
 
   return (
     <motion.section 
-      className="py-16 px-4 bg-gradient-to-b from-blue-50 to-white"
+      className="py-8 sm:py-10 md:py-14 px-2 sm:px-4 bg-gradient-to-b from-blue-50 to-white"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -144,11 +144,11 @@ const Maps = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-7 sm:mb-10 md:mb-12"
           variants={fadeInVariants}
         >
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-slate-800 mb-4"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 mb-2 sm:mb-3 md:mb-4"
             whileHover={{ 
               scale: 1.02,
               color: "#1e40af",
@@ -158,13 +158,13 @@ const Maps = () => {
             Find Us on Map
           </motion.h2>
           <motion.div 
-            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-slate-600 mx-auto mb-6"
+            className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-blue-500 to-slate-600 mx-auto mb-3 sm:mb-4 md:mb-6"
             initial={{ width: 0 }}
             whileInView={{ width: "6rem" }}
             transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
           />
           <motion.p 
-            className="text-lg text-slate-600 max-w-3xl mx-auto"
+            className="text-xs sm:text-sm md:text-base text-slate-600 max-w-3xl mx-auto"
             variants={fadeInVariants}
           >
             Visit our office in Delhi's prime business district for personalized consultation and expert financial advice.
@@ -173,7 +173,7 @@ const Maps = () => {
 
         {/* Map Container */}
         <motion.div 
-          className="bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-blue-100"
+          className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-blue-100"
           variants={mapVariants}
           whileHover={{ 
             scale: 1.01,
@@ -183,7 +183,7 @@ const Maps = () => {
         >
           {/* Address Bar */}
           <motion.div 
-            className="bg-gradient-to-r from-blue-600 to-slate-700 p-6 text-white"
+            className="bg-gradient-to-r from-blue-600 to-slate-700 p-3 sm:p-4 md:p-6 text-white"
             variants={fadeInVariants}
           >
             <motion.div 
@@ -203,13 +203,13 @@ const Maps = () => {
               />
               <div className="text-center">
                 <motion.h3 
-                  className="text-xl font-bold mb-1"
+                  className="text-base sm:text-lg md:text-xl font-bold mb-0.5 sm:mb-1"
                   variants={fadeInVariants}
                 >
                   Eazy Tax - CA Office
                 </motion.h3>
                 <motion.p 
-                  className="text-blue-100"
+                  className="text-xs sm:text-sm md:text-base text-blue-100"
                   variants={fadeInVariants}
                 >
                   {destinationAddress}
@@ -261,23 +261,26 @@ const Maps = () => {
               ref={mapRef}
               style={{
                 width: '100%',
-                height: 450,
+                height: 250,
+                minHeight: 180,
+                maxHeight: 400,
               }}
+              className="sm:h-[300px] md:h-[400px]"
             />
           </motion.div>
 
           {/* Action Buttons */}
           <motion.div 
-            className="p-6 bg-gradient-to-r from-slate-50 to-blue-50"
+            className="p-3 sm:p-4 md:p-6 bg-gradient-to-r from-slate-50 to-blue-50"
             variants={fadeInVariants}
           >
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center"
               variants={containerVariants}
             >
               <motion.button
                 onClick={handleGetDirections}
-                className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-3 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 flex items-center justify-center gap-3"
+                className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:from-blue-600 hover:to-blue-700 transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3"
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: "0 15px 30px rgba(59, 130, 246, 0.4)",
@@ -301,7 +304,7 @@ const Maps = () => {
 
               <motion.button
                 onClick={() => window.open('tel:+919821575784', '_blank')}
-                className="border-2 border-blue-500 text-blue-500 px-8 py-3 rounded-xl font-semibold text-lg hover:bg-blue-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-3"
+                className="border-2 border-blue-500 text-blue-500 px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:bg-blue-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3"
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: "0 15px 30px rgba(59, 130, 246, 0.2)",
@@ -326,15 +329,15 @@ const Maps = () => {
 
             {/* Contact Info */}
             <motion.div 
-              className="mt-6 pt-6 border-t border-blue-200 text-center"
+              className="mt-4 sm:mt-5 md:mt-6 pt-4 sm:pt-5 md:pt-6 border-t border-blue-200 text-center"
               variants={fadeInVariants}
             >
               <motion.div 
-                className="flex flex-col sm:flex-row justify-center items-center gap-6 text-slate-600"
+                className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-5 md:gap-6 text-slate-600"
                 variants={containerVariants}
               >
                 <motion.div 
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-1.5 sm:gap-2"
                   whileHover={{ 
                     scale: 1.05,
                     color: "#1e40af",
@@ -352,11 +355,11 @@ const Maps = () => {
                       ease: "easeInOut"
                     }}
                   />
-                  +91 98215 75784
+                  <span className="text-xs sm:text-sm md:text-base">+91 98215 75784</span>
                 </motion.div>
                 
                 <motion.div 
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-1.5 sm:gap-2"
                   whileHover={{ 
                     scale: 1.05,
                     color: "#1e40af",
@@ -374,7 +377,7 @@ const Maps = () => {
                       ease: "linear"
                     }}
                   />
-                  Mon-Sat: 9:00 AM - 6:00 PM
+                  <span className="text-xs sm:text-sm md:text-base">Mon-Sat: 9:00 AM - 6:00 PM</span>
                 </motion.div>
               </motion.div>
             </motion.div>

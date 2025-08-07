@@ -113,9 +113,9 @@ const About = () => {
   }
 
   return (
-    <div className="bg-gradient-to-r from-blue-50 via-gray-50 to-blue-100 min-h-screen flex items-center justify-center p-6">
+    <div className="bg-gradient-to-r from-blue-50 via-gray-50 to-blue-100 min-h-screen flex items-center justify-center p-3 sm:p-4 md:p-6">
       <motion.div 
-        className="max-w-7xl w-full flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16"
+        className="max-w-7xl w-full flex flex-col md:flex-row items-center md:items-start gap-4 sm:gap-6 md:gap-12 lg:gap-16"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -123,13 +123,13 @@ const About = () => {
       >
         {/* Left Section - Image */}
         <motion.div 
-          className="flex-shrink-0"
+          className="flex-shrink-0 w-full sm:w-3/4 md:w-[320px] lg:w-[400px] xl:w-[500px]"
           variants={slideInLeft}
         >
           <motion.img
             src="/about1.jpg"
             alt="About Eazy Tax - Professional CA Services"
-            className="w-[600px] h-[700px]  rounded-full shadow-xl"
+            className="w-full h-auto max-w-[320px] sm:max-w-[400px] md:max-w-[320px] lg:max-w-[400px] xl:max-w-[500px] aspect-square rounded-full shadow-xl mx-auto"
             initial={{ scale: 1.1, x: -100, opacity: 0 }}
             whileInView={{ scale: 1, x: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -148,11 +148,11 @@ const About = () => {
 
         {/* Right Section - Text Content */}
         <motion.div 
-          className="max-w-2xl text-gray-800"
+          className="max-w-2xl w-full text-gray-800"
           variants={slideInRight}
         >
           <motion.h2 
-            className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 sm:mb-5 md:mb-6 leading-tight bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -166,14 +166,14 @@ const About = () => {
           </motion.h2>
           
           <motion.div
-            className="space-y-6"
+            className="space-y-4 sm:space-y-5 md:space-y-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <motion.p 
-              className="text-base md:text-lg font-normal leading-relaxed text-gray-700 hover:text-gray-900 transition-colors duration-300"
+              className="text-sm sm:text-base md:text-[17px] font-normal leading-relaxed text-gray-700 hover:text-gray-900 transition-colors duration-300"
               whileHover={{
                 scale: 1.01,
                 transition: { duration: 0.2 }
@@ -183,7 +183,7 @@ const About = () => {
             </motion.p>
 
             <motion.h3 
-              className="text-xl md:text-2xl font-bold text-blue-600 mt-8 mb-4"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-blue-600 mt-6 sm:mt-7 md:mt-8 mb-2 sm:mb-3 md:mb-4"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -198,7 +198,7 @@ const About = () => {
             </motion.h3>
 
             <motion.p 
-              className="text-base md:text-lg font-normal leading-relaxed text-gray-700 hover:text-gray-900 transition-colors duration-300"
+              className="text-sm sm:text-base md:text-[17px] font-normal leading-relaxed text-gray-700 hover:text-gray-900 transition-colors duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -223,7 +223,7 @@ const About = () => {
             </motion.p>
 
             <motion.p 
-              className="text-base md:text-lg font-normal leading-relaxed text-gray-700 hover:text-gray-900 transition-colors duration-300"
+              className="text-sm sm:text-base md:text-[17px] font-normal leading-relaxed text-gray-700 hover:text-gray-900 transition-colors duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

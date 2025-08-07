@@ -100,7 +100,7 @@ const WhyChooseUs = () => {
 
   return (
     <motion.section 
-      className="bg-gradient-to-br from-blue-50 via-slate-50 to-white py-16 px-4"
+      className="bg-gradient-to-br from-blue-50 via-slate-50 to-white py-8 sm:py-12 md:py-16 px-2 sm:px-4"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -109,11 +109,11 @@ const WhyChooseUs = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
           variants={leftToRightVariants}
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-extrabold text-slate-800 mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-800 mb-3 sm:mb-4 md:mb-6"
             whileHover={{ 
               scale: 1.02,
               color: "#1e40af",
@@ -123,13 +123,13 @@ const WhyChooseUs = () => {
             Why Choose Us
           </motion.h2>
           <motion.div 
-            className="w-32 h-1 bg-gradient-to-r from-blue-500 to-slate-600 mx-auto mb-8"
+            className="w-20 sm:w-28 md:w-32 h-1 bg-gradient-to-r from-blue-500 to-slate-600 mx-auto mb-4 sm:mb-6 md:mb-8"
             initial={{ width: 0 }}
             whileInView={{ width: "8rem" }}
             transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
           />
           <motion.p 
-            className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed"
+            className="text-xs sm:text-sm md:text-base text-slate-600 max-w-4xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
             We are not just service providers—we are strategic partners in your business journey. 
@@ -140,17 +140,17 @@ const WhyChooseUs = () => {
 
         {/* Why Choose Us Points List */}
         <motion.div 
-          className="max-w-4xl mx-auto mb-16"
+          className="max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16"
           variants={containerVariants}
         >
           <motion.ul 
-            className="space-y-6"
+            className="space-y-4 sm:space-y-5 md:space-y-6"
             variants={containerVariants}
           >
             {whyChooseUsPoints.map((point, index) => (
               <motion.li
                 key={index}
-                className="flex items-start gap-6 group"
+                className="flex items-start gap-3 sm:gap-4 md:gap-6 group"
                 variants={leftToRightVariants}
                 whileHover={{ 
                   x: 10,
@@ -159,7 +159,7 @@ const WhyChooseUs = () => {
               >
                 {/* Bullet Point Icon */}
                 <motion.div 
-                  className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-slate-600 rounded-full flex-shrink-0 mt-1"
+                  className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-500 to-slate-600 rounded-full flex-shrink-0 mt-1"
                   whileHover={{ 
                     rotate: 360,
                     scale: 1.1,
@@ -167,7 +167,7 @@ const WhyChooseUs = () => {
                   }}
                 >
                   <motion.i 
-                    className={`${point.icon} text-lg text-white`}
+                    className={`${point.icon} text-xs sm:text-base md:text-lg text-white`}
                     animate={{ 
                       scale: [1, 1.1, 1]
                     }}
@@ -186,7 +186,7 @@ const WhyChooseUs = () => {
                   variants={itemVariants}
                 >
                   <motion.h3 
-                    className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors duration-300"
+                    className="text-sm sm:text-base md:text-xl font-bold text-slate-800 mb-1 sm:mb-1.5 md:mb-2 group-hover:text-blue-600 transition-colors duration-300"
                     whileHover={{ 
                       x: 5,
                       transition: { duration: 0.3 }
@@ -196,7 +196,7 @@ const WhyChooseUs = () => {
                   </motion.h3>
                   
                   <motion.p 
-                    className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300"
+                    className="text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300"
                     variants={itemVariants}
                   >
                     {point.description}
@@ -204,7 +204,7 @@ const WhyChooseUs = () => {
 
                   {/* Animated Underline */}
                   <motion.div
-                    className="mt-3 h-0.5 bg-gradient-to-r from-blue-500 to-slate-600 rounded-full"
+                    className="mt-2 sm:mt-2.5 md:mt-3 h-0.5 bg-gradient-to-r from-blue-500 to-slate-600 rounded-full"
                     initial={{ width: 0 }}
                     whileInView={{ width: "100%" }}
                     transition={{ delay: index * 0.2, duration: 0.8, ease: "easeOut" }}
@@ -217,7 +217,7 @@ const WhyChooseUs = () => {
 
         {/* Our Clientele Section */}
         <motion.div 
-          className="bg-gradient-to-r from-slate-800 via-blue-900 to-slate-800 rounded-3xl p-10 mb-16 text-white"
+          className="bg-gradient-to-r from-slate-800 via-blue-900 to-slate-800 rounded-3xl p-5 sm:p-8 md:p-10 mb-8 sm:mb-12 md:mb-16 text-white"
           variants={rightToLeftVariants}
           whileHover={{ 
             scale: 1.02,
@@ -226,11 +226,11 @@ const WhyChooseUs = () => {
           }}
         >
           <motion.div 
-            className="text-center mb-8"
+            className="text-center mb-4 sm:mb-6 md:mb-8"
             variants={leftToRightVariants}
           >
             <motion.h3 
-              className="text-3xl md:text-4xl font-bold mb-4"
+              className="text-lg sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 md:mb-4"
               whileHover={{ 
                 scale: 1.05,
                 color: "#60a5fa",
@@ -240,7 +240,7 @@ const WhyChooseUs = () => {
               Our Clientele
             </motion.h3>
             <motion.div 
-              className="w-24 h-1 bg-gradient-to-r from-blue-400 to-white mx-auto mb-6"
+              className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-blue-400 to-white mx-auto mb-3 sm:mb-4 md:mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: "6rem" }}
               transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
@@ -248,7 +248,7 @@ const WhyChooseUs = () => {
           </motion.div>
 
           <motion.p 
-            className="text-lg text-blue-100 leading-relaxed max-w-5xl mx-auto text-center"
+            className="text-xs sm:text-sm md:text-base text-blue-100 leading-relaxed max-w-5xl mx-auto text-center"
             variants={itemVariants}
           >
             Over the years, we have worked closely with a diverse portfolio of clients, ranging from small business owners to public companies. 
@@ -257,7 +257,7 @@ const WhyChooseUs = () => {
 
           {/* Client Stats */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-8 md:mt-10"
             variants={containerVariants}
           >
             {[
@@ -276,7 +276,7 @@ const WhyChooseUs = () => {
                 }}
               >
                 <motion.i 
-                  className={`${stat.icon} text-3xl text-blue-400 mb-3 block`}
+                  className={`${stat.icon} text-xl sm:text-2xl md:text-3xl text-blue-400 mb-1 sm:mb-2 md:mb-3 block`}
                   animate={{ 
                     y: [0, -5, 0]
                   }}
@@ -287,7 +287,7 @@ const WhyChooseUs = () => {
                   }}
                 />
                 <motion.div 
-                  className="text-3xl font-bold text-white mb-2"
+                  className="text-lg sm:text-xl md:text-3xl font-bold text-white mb-1 sm:mb-2"
                   whileHover={{ 
                     scale: 1.1,
                     color: "#60a5fa",
@@ -297,7 +297,7 @@ const WhyChooseUs = () => {
                   {stat.number}
                 </motion.div>
                 <motion.p 
-                  className="text-blue-200 font-medium"
+                  className="text-xs sm:text-sm md:text-base text-blue-200 font-medium"
                   variants={itemVariants}
                 >
                   {stat.label}
@@ -309,7 +309,7 @@ const WhyChooseUs = () => {
 
         {/* Call to Action Section */}
         <motion.div 
-          className="text-center bg-white rounded-3xl p-10 shadow-xl border-2 border-blue-100"
+          className="text-center bg-white rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl border-2 border-blue-100"
           variants={leftToRightVariants}
           whileHover={{ 
             scale: 1.02,
@@ -319,7 +319,7 @@ const WhyChooseUs = () => {
           }}
         >
           <motion.h3 
-            className="text-2xl md:text-3xl font-bold text-slate-800 mb-6"
+            className="text-base sm:text-lg md:text-2xl font-bold text-slate-800 mb-3 sm:mb-4 md:mb-6"
             whileHover={{ 
               color: "#1e40af",
               transition: { duration: 0.3 }
@@ -329,7 +329,7 @@ const WhyChooseUs = () => {
           </motion.h3>
           
           <motion.p 
-            className="text-lg text-slate-600 mb-8 max-w-3xl mx-auto"
+            className="text-xs sm:text-sm md:text-base text-slate-600 mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto"
             variants={itemVariants}
           >
             If you are looking for a Chartered Accountancy firm that blends traditional values with modern expertise, 
@@ -337,11 +337,11 @@ const WhyChooseUs = () => {
           </motion.p>
 
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
             variants={containerVariants}
           >
             <motion.button
-              className="bg-gradient-to-r from-blue-500 to-slate-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-slate-700 transition-all duration-300 flex items-center gap-3"
+              className="bg-gradient-to-r from-blue-500 to-slate-600 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl font-semibold text-xs sm:text-sm md:text-lg hover:from-blue-600 hover:to-slate-700 transition-all duration-300 flex items-center gap-2 sm:gap-3"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 15px 30px rgba(59, 130, 246, 0.4)",
@@ -351,7 +351,7 @@ const WhyChooseUs = () => {
               onClick={() => window.open('https://wa.me/919821575784', '_blank')}
             >
               <motion.i 
-                className="fab fa-whatsapp text-xl"
+                className="fab fa-whatsapp text-base sm:text-lg md:text-xl"
                 animate={{ 
                   rotate: [0, 10, -10, 0]
                 }}
@@ -370,7 +370,7 @@ const WhyChooseUs = () => {
             </motion.button>
 
             <motion.button
-              className="border-2 border-blue-500 text-blue-500 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-500 hover:text-white transition-all duration-300 flex items-center gap-3"
+              className="border-2 border-blue-500 text-blue-500 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl font-semibold text-xs sm:text-sm md:text-lg hover:bg-blue-500 hover:text-white transition-all duration-300 flex items-center gap-2 sm:gap-3"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 15px 30px rgba(59, 130, 246, 0.2)",
@@ -380,7 +380,7 @@ const WhyChooseUs = () => {
               onClick={() => window.open('tel:+919821575784', '_blank')}
             >
               <motion.i 
-                className="fas fa-phone text-xl"
+                className="fas fa-phone text-base sm:text-lg md:text-xl"
                 animate={{ 
                   rotate: [0, 15, 0]
                 }}
@@ -401,11 +401,11 @@ const WhyChooseUs = () => {
 
           {/* Contact Info */}
           <motion.div 
-            className="mt-8 pt-8 border-t border-blue-100"
+            className="mt-4 sm:mt-6 md:mt-8 pt-4 sm:pt-6 md:pt-8 border-t border-blue-100"
             variants={itemVariants}
           >
             <motion.p 
-              className="text-slate-600 flex items-center justify-center gap-2 mb-2"
+              className="text-xs sm:text-sm md:text-base text-slate-600 flex items-center justify-center gap-1 sm:gap-2 mb-1 sm:mb-2"
               whileHover={{ 
                 color: "#1e40af",
                 scale: 1.02,
@@ -426,7 +426,7 @@ const WhyChooseUs = () => {
               +91 98215 75784
             </motion.p>
             <motion.p 
-              className="text-slate-600 flex items-center justify-center gap-2"
+              className="text-xs sm:text-sm md:text-base text-slate-600 flex items-center justify-center gap-1 sm:gap-2"
               whileHover={{ 
                 color: "#1e40af",
                 scale: 1.02,

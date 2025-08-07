@@ -59,7 +59,7 @@ const AboutPage = () => {
     >
       {/* Hero Header Section */}
       <motion.section 
-        className="relative min-h-[60vh] flex items-center justify-center overflow-hidden"
+        className="relative min-h-[40vh] sm:min-h-[55vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden"
         variants={headerVariants}
       >
         {/* Animated Background */}
@@ -179,7 +179,7 @@ const AboutPage = () => {
 
         {/* Header Content */}
         <motion.div 
-          className="relative z-10 text-center px-4 max-w-4xl mx-auto"
+          className="relative z-10 text-center px-2 sm:px-4 max-w-2xl md:max-w-4xl mx-auto"
           variants={fadeInVariants}
         >
           <motion.div
@@ -188,7 +188,7 @@ const AboutPage = () => {
             transition={{ duration: 0.3 }}
           >
             <motion.h1 
-              className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight"
+              className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 md:mb-6 leading-tight"
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
               }}
@@ -210,7 +210,7 @@ const AboutPage = () => {
           </motion.div>
 
           <motion.p 
-            className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-blue-100 mb-6 md:mb-8 leading-relaxed"
             variants={fadeInVariants}
           >
             Discover our legacy of excellence in chartered accountancy. 
@@ -219,11 +219,11 @@ const AboutPage = () => {
           </motion.p>
 
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center"
             variants={fadeInVariants}
           >
             <motion.button
-              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 flex items-center gap-3 shadow-lg"
+              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-5 py-2 sm:px-7 sm:py-3 rounded-full font-semibold text-base sm:text-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 flex items-center gap-2 md:gap-3 shadow-lg"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)",
@@ -251,7 +251,7 @@ const AboutPage = () => {
             </motion.button>
 
             <motion.button
-              className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-slate-900 transition-all duration-300 flex items-center gap-3"
+              className="border-2 border-white text-white px-5 py-2 sm:px-7 sm:py-3 rounded-full font-semibold text-base sm:text-lg hover:bg-white hover:text-slate-900 transition-all duration-300 flex items-center gap-2 md:gap-3"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(255, 255, 255, 0.2)",
@@ -292,7 +292,7 @@ const AboutPage = () => {
             }}
           >
             <motion.i 
-              className="fas fa-chevron-down text-2xl text-white opacity-70"
+              className="fas fa-chevron-down text-lg sm:text-xl text-white opacity-70"
               whileHover={{ scale: 1.2, opacity: 1 }}
             />
           </motion.div>
@@ -301,12 +301,12 @@ const AboutPage = () => {
 
       {/* Company Overview Section */}
       <motion.section 
-        className="py-16 px-4 bg-gradient-to-b from-slate-50 to-blue-50"
+        className="py-10 sm:py-14 md:py-16 px-2 sm:px-4 bg-gradient-to-b from-slate-50 to-blue-50"
         variants={fadeInVariants}
       >
         <div className="max-w-6xl mx-auto text-center">
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-slate-800 mb-8"
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 mb-6 md:mb-8"
             variants={fadeInVariants}
             whileHover={{ 
               scale: 1.02,
@@ -318,7 +318,7 @@ const AboutPage = () => {
           </motion.h2>
           
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-8 mb-8 md:mb-12"
             variants={containerVariants}
           >
             {[
@@ -343,7 +343,7 @@ const AboutPage = () => {
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500"
+                className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500"
                 variants={fadeInVariants}
                 whileHover={{ 
                   scale: 1.05,
@@ -352,7 +352,7 @@ const AboutPage = () => {
                 }}
               >
                 <motion.div 
-                  className="w-16 h-16 bg-gradient-to-r from-blue-500 to-slate-600 rounded-full flex items-center justify-center mx-auto mb-6"
+                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-slate-600 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6"
                   whileHover={{ 
                     rotate: 360,
                     scale: 1.1,
@@ -360,7 +360,7 @@ const AboutPage = () => {
                   }}
                 >
                   <motion.i 
-                    className={`${stat.icon} text-2xl text-white`}
+                    className={`${stat.icon} text-lg sm:text-xl md:text-2xl text-white`}
                     animate={{ 
                       scale: [1, 1.1, 1]
                     }}
@@ -374,7 +374,7 @@ const AboutPage = () => {
                 </motion.div>
 
                 <motion.h3 
-                  className="text-3xl font-bold text-blue-600 mb-2"
+                  className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1 md:mb-2"
                   whileHover={{ 
                     scale: 1.1,
                     transition: { duration: 0.3 }
@@ -384,14 +384,14 @@ const AboutPage = () => {
                 </motion.h3>
 
                 <motion.h4 
-                  className="text-xl font-semibold text-slate-800 mb-3"
+                  className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-2 md:mb-3"
                   variants={fadeInVariants}
                 >
                   {stat.label}
                 </motion.h4>
 
                 <motion.p 
-                  className="text-slate-600"
+                  className="text-xs sm:text-sm md:text-base text-slate-600"
                   variants={fadeInVariants}
                 >
                   {stat.description}
@@ -427,12 +427,12 @@ const AboutPage = () => {
 
       {/* Call to Action Section */}
       <motion.section 
-        className="py-16 px-4 bg-gradient-to-br from-blue-900 via-slate-800 to-blue-900"
+        className="py-10 sm:py-14 md:py-16 px-2 sm:px-4 bg-gradient-to-br from-blue-900 via-slate-800 to-blue-900"
         variants={fadeInVariants}
       >
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6"
             variants={fadeInVariants}
             whileHover={{ 
               scale: 1.02,
@@ -444,7 +444,7 @@ const AboutPage = () => {
           </motion.h2>
           
           <motion.p 
-            className="text-xl text-blue-100 mb-8"
+            className="text-sm sm:text-base md:text-lg text-blue-100 mb-6 md:mb-8"
             variants={fadeInVariants}
           >
             Join hundreds of satisfied clients who trust us with their financial success. 
@@ -452,11 +452,11 @@ const AboutPage = () => {
           </motion.p>
 
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center"
             variants={containerVariants}
           >
             <motion.button
-              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 flex items-center gap-3"
+              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-5 py-2 sm:px-7 sm:py-3 rounded-xl font-semibold text-base sm:text-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 flex items-center gap-2 md:gap-3"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 15px 30px rgba(59, 130, 246, 0.4)",
@@ -480,7 +480,7 @@ const AboutPage = () => {
             </motion.button>
 
             <motion.button
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center gap-3"
+              className="border-2 border-white text-white px-5 py-2 sm:px-7 sm:py-3 rounded-xl font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center gap-2 md:gap-3"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 15px 30px rgba(255, 255, 255, 0.2)",
@@ -508,13 +508,13 @@ const AboutPage = () => {
 
       {/* WhatsApp Floating Button */}
       <motion.div
-        className="fixed bottom-8 right-8 z-50"
+        className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 2, duration: 0.5 }}
       >
         <motion.button
-          className="bg-green-500 text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center"
+          className="bg-green-500 text-white w-12 h-12 sm:w-16 sm:h-16 rounded-full shadow-lg flex items-center justify-center"
           whileHover={{ 
             scale: 1.1,
             boxShadow: "0 10px 25px rgba(34, 197, 94, 0.4)",
@@ -532,7 +532,7 @@ const AboutPage = () => {
           onClick={() => window.open('https://wa.me/919821575784', '_blank')}
         >
           <motion.i 
-            className="fab fa-whatsapp text-2xl"
+            className="fab fa-whatsapp text-lg sm:text-2xl"
             animate={{ 
               rotate: [0, 10, -10, 0]
             }}

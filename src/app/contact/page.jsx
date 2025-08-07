@@ -58,7 +58,7 @@ const ContactPage = () => {
     >
       {/* Hero Header Section */}
       <motion.section 
-        className="relative min-h-[60vh] flex items-center justify-center overflow-hidden"
+        className="relative min-h-[40vh] sm:min-h-[55vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden"
         variants={headerVariants}
       >
         {/* Animated Background */}
@@ -145,7 +145,7 @@ const ContactPage = () => {
 
         {/* Header Content */}
         <motion.div 
-          className="relative z-10 text-center px-4 max-w-4xl mx-auto"
+          className="relative z-10 text-center px-2 sm:px-4 max-w-2xl md:max-w-4xl mx-auto"
           variants={fadeInVariants}
         >
           <motion.div
@@ -154,7 +154,7 @@ const ContactPage = () => {
             transition={{ duration: 0.3 }}
           >
             <motion.h1 
-              className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight"
+              className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 md:mb-6 leading-tight"
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
               }}
@@ -176,7 +176,7 @@ const ContactPage = () => {
           </motion.div>
 
           <motion.p 
-            className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-blue-100 mb-6 md:mb-8 leading-relaxed"
             variants={fadeInVariants}
           >
             Ready to transform your business with expert financial guidance? 
@@ -185,11 +185,11 @@ const ContactPage = () => {
           </motion.p>
 
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center"
             variants={fadeInVariants}
           >
             <motion.button
-              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 flex items-center gap-3 shadow-lg"
+              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-5 py-2 sm:px-7 sm:py-3 rounded-full font-semibold text-base sm:text-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 flex items-center gap-2 md:gap-3 shadow-lg"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)",
@@ -217,7 +217,7 @@ const ContactPage = () => {
             </motion.button>
 
             <motion.button
-              className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center gap-3"
+              className="border-2 border-white text-white px-5 py-2 sm:px-7 sm:py-3 rounded-full font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center gap-2 md:gap-3"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(255, 255, 255, 0.2)",
@@ -254,7 +254,7 @@ const ContactPage = () => {
             }}
           >
             <motion.i 
-              className="fas fa-chevron-down text-2xl text-white opacity-70"
+              className="fas fa-chevron-down text-lg sm:text-xl text-white opacity-70"
               whileHover={{ scale: 1.2, opacity: 1 }}
             />
           </motion.div>
@@ -279,13 +279,13 @@ const ContactPage = () => {
 
       {/* WhatsApp Floating Button */}
       <motion.div
-        className="fixed bottom-8 right-8 z-50"
+        className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 2, duration: 0.5 }}
       >
         <motion.button
-          className="bg-green-500 text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center"
+          className="bg-green-500 text-white w-12 h-12 sm:w-16 sm:h-16 rounded-full shadow-lg flex items-center justify-center"
           whileHover={{ 
             scale: 1.1,
             boxShadow: "0 10px 25px rgba(34, 197, 94, 0.4)",
@@ -303,7 +303,7 @@ const ContactPage = () => {
           onClick={() => window.open('https://wa.me/919821575784', '_blank')}
         >
           <motion.i 
-            className="fab fa-whatsapp text-2xl"
+            className="fab fa-whatsapp text-lg sm:text-2xl"
             animate={{ 
               rotate: [0, 10, -10, 0]
             }}
