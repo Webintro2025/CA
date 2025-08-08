@@ -2,7 +2,7 @@ const servicesData =
 [
   {
     "title": "Company Registration in India",
-    "image": "companyregistartion.png",
+    "image": "company.png",
     "introduction": "Company registration is the foundational step in establishing a business as a legal entity in India. It legitimizes a business under the Companies Act, 2013, governed by the Ministry of Corporate Affairs (MCA)...",
     "definition": "Company registration is the formal process of incorporating a business as a company under Indian law. It involves submitting specific documentation and compliance with legal formalities through the MCA portal...",
     "types": [
@@ -60,7 +60,7 @@ const servicesData =
   },
   {
     "title": "LLP Registration in India",
-    "image": "llpregistration.png",
+    "image": "llp.png",
     "introduction": "Limited Liability Partnership (LLP) registration is one of the most sought-after business structures in India for entrepreneurs, professionals, and small businesses...",
     "definition": "An LLP is a hybrid form of business structure offering partnership features and limited liability of a private limited company...",
     "importance": [
@@ -120,7 +120,7 @@ const servicesData =
   },
   {
     "title": "Partnership Firm Registration in India",
-    "image": "Partnership Firm Registration.png",
+    "image": "partner.png",
     "introduction": "A partnership firm is one of the oldest and most traditional forms of business in India...",
     "types": [
       "Registered Partnership Firm",
@@ -189,7 +189,7 @@ const servicesData =
   },
   {
     "title": "Sole Proprietorship Registration in India",
-    "image": "Sole Proprietorship Registration.png",
+    "image": "sole.png",
     "introduction": "A sole proprietorship is the simplest and most common form of business in India, especially for small traders, individual professionals, freelancers, and shop owners...",
     "definition": "A sole proprietorship is a one-person business entity with no legal separation between the owner and the business...",
     "importance": [
@@ -251,7 +251,7 @@ const servicesData =
   },
   {
     "title": "MSME Registration in India",
-    "image": "MSME Registration.png",
+    "image": "msme.png",
     "introduction": "Micro, Small, and Medium Enterprises (MSMEs) form the backbone of India’s economy...",
     "definition": "MSME registration is the official recognition provided by the Ministry of Micro, Small, and Medium Enterprises. It classifies businesses into three categories...",
     "categories": [
@@ -318,7 +318,7 @@ const servicesData =
   },
   {
     "title": "Startupindia Registration",
-    "image": "Startupindia registration.png",
+    "image": "startup.png",
     "introduction": "India is home to one of the largest and fastest-growing startup ecosystems in the world...",
     "definition": "Startup India Registration is the formal recognition granted by the Department for Promotion of Industry and Internal Trade (DPIIT) to a business entity that meets the criteria of a ‘Startup’...",
     "benefits": [
@@ -385,7 +385,7 @@ const servicesData =
   },
   {
     "title": "Society Registration in India",
-    "image": "Society registration.png",
+    "image": "Society.png",
     "introduction": "A Society is an organized group of individuals who come together for a common charitable, cultural, religious, educational, or social objective...",
     "definition": "Society registration is the process of legally recognizing a group formed for non-commercial purposes. Once registered, the society becomes a legal entity separate from its members...",
     "purpose": [
@@ -458,7 +458,7 @@ const servicesData =
   },
   {
     "title": "Trust Registration in India",
-    "image": "Trust registration.png",
+    "image": "trust.png",
     "introduction": "A Trust is a legal arrangement in which the owner of certain assets transfers them to a trustee to manage and utilize for the benefit of specific individuals or a general public cause...",
     "definition": "Trust registration is the legal process of recognizing a trust deed by submitting it to the Registrar of Trusts...",
     "types": [
@@ -532,7 +532,7 @@ const servicesData =
   },
   {
     "title": "Import Export Code Registration",
-    "image": "Import Export Code Registration.png",
+    "image": "import.png",
     "introduction": "The Import Export Code (IEC) is a mandatory business identification number required for exporting or importing goods and services from India...",
     "definition": "IEC is a unique code allotted to businesses or individuals who want to undertake import or export activities. It is a one-time registration that is valid for a lifetime and does not require any renewal unless canceled or modified.",
     "applicability": [
@@ -613,7 +613,7 @@ const servicesData =
   },
   {
     "title": "GST Return Filing in India",
-    "image": "GST Return Filing.png",
+    "image": "return.png",
     "introduction": "After obtaining GST registration, the next and most important compliance obligation for a business is filing GST returns...",
     "definition": "GST Return Filing is the process through which registered taxpayers report their sales, purchases, tax collected, and tax paid to the government.",
     "purpose": [
@@ -690,7 +690,7 @@ const servicesData =
   },
   {
     "title": "Bookkeeping Services in India",
-    "image": "Bookkeeping Services.png",
+    "image": "account.png",
     "introduction": "Bookkeeping is the foundation of every business’s financial system...",
     "definition": "Bookkeeping services refer to the systematic recording of all financial transactions—purchases, sales, receipts, payments—conducted by a business.",
     "services_included": [
@@ -763,7 +763,7 @@ const servicesData =
   ,
   {
     "title": "GST Registration",
-    "image": "gstregistration.png",
+    "image": "registrationgst.png",
     "introduction": "GST Registration is the process of obtaining a unique Goods and Services Tax Identification Number (GSTIN) from the Indian government, which is mandatory for businesses exceeding the prescribed turnover threshold or engaging in specific activities.",
     "definition": "GST Registration is a legal process that recognizes a business as a supplier of goods or services liable to collect and remit GST. It enables businesses to claim input tax credit and comply with GST law.",
     "who_should_register": [

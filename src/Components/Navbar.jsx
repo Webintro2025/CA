@@ -297,36 +297,34 @@ const Navbar = () => {
                             }}
                             className="px-3 py-2.5 text-sm text-gray-700 cursor-pointer transition-all duration-200 rounded-md mx-1"
                           >
-                            <motion.div
-                              className="flex items-center space-x-3"
-                              whileHover={{ x: 2 }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              <motion.span
-                                className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"
-                                whileHover={{ 
-                                  scale: 1.4,
-                                  backgroundColor: "#1e40af"
-                                }}
-                                transition={{ duration: 0.2 }}
-                                animate={{
-                                  scale: [1, 1.1, 1],
-                                  opacity: [0.7, 1, 0.7]
-                                }}
-                                style={{
-                                  animationDelay: `${index * 0.1}s`,
-                                  animationDuration: '2s',
-                                  animationIterationCount: 'infinite'
-                                }}
-                              />
-                              <span className="leading-tight">{service}</span>
-                              <motion.i 
-                                className="fas fa-arrow-right text-xs ml-auto opacity-0 group-hover:opacity-100"
-                                initial={{ x: -10, opacity: 0 }}
-                                whileHover={{ x: 0, opacity: 1 }}
-                                transition={{ duration: 0.2 }}
-                              />
-                            </motion.div>
+                            <Link href={`/services?name=${encodeURIComponent(service)}`} legacyBehavior>
+                              <a className="flex items-center space-x-3 w-full h-full">
+                                <motion.span
+                                  className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"
+                                  whileHover={{ 
+                                    scale: 1.4,
+                                    backgroundColor: "#1e40af"
+                                  }}
+                                  transition={{ duration: 0.2 }}
+                                  animate={{
+                                    scale: [1, 1.1, 1],
+                                    opacity: [0.7, 1, 0.7]
+                                  }}
+                                  style={{
+                                    animationDelay: `${index * 0.1}s`,
+                                    animationDuration: '2s',
+                                    animationIterationCount: 'infinite'
+                                  }}
+                                />
+                                <span className="leading-tight">{service}</span>
+                                <motion.i 
+                                  className="fas fa-arrow-right text-xs ml-auto opacity-0 group-hover:opacity-100"
+                                  initial={{ x: -10, opacity: 0 }}
+                                  whileHover={{ x: 0, opacity: 1 }}
+                                  transition={{ duration: 0.2 }}
+                                />
+                              </a>
+                            </Link>
                           </motion.li>
                         ))}
                       </motion.ul>
@@ -661,36 +659,34 @@ const Navbar = () => {
                             }}
                             className="px-3 py-2.5 text-sm text-gray-700 cursor-pointer transition-all duration-200 rounded-md mx-1"
                           >
-                            <motion.div
-                              className="flex items-center space-x-3"
-                              whileHover={{ x: 2 }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              <motion.span
-                                className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"
-                                whileHover={{ 
-                                  scale: 1.4,
-                                  backgroundColor: "#1e40af"
-                                }}
-                                transition={{ duration: 0.2 }}
-                                animate={{
-                                  scale: [1, 1.1, 1],
-                                  opacity: [0.7, 1, 0.7]
-                                }}
-                                style={{
-                                  animationDelay: `${index * 0.1}s`,
-                                  animationDuration: '2s',
-                                  animationIterationCount: 'infinite'
-                                }}
-                              />
-                              <span className="leading-tight">{service}</span>
-                              <motion.i 
-                                className="fas fa-arrow-right text-xs ml-auto opacity-0 group-hover:opacity-100"
-                                initial={{ x: -10, opacity: 0 }}
-                                whileHover={{ x: 0, opacity: 1 }}
-                                transition={{ duration: 0.2 }}
-                              />
-                            </motion.div>
+                            <Link href={`/services?name=${encodeURIComponent(service)}`} legacyBehavior>
+                              <a className="flex items-center space-x-3 w-full h-full">
+                                <motion.span
+                                  className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"
+                                  whileHover={{ 
+                                    scale: 1.4,
+                                    backgroundColor: "#1e40af"
+                                  }}
+                                  transition={{ duration: 0.2 }}
+                                  animate={{
+                                    scale: [1, 1.1, 1],
+                                    opacity: [0.7, 1, 0.7]
+                                  }}
+                                  style={{
+                                    animationDelay: `${index * 0.1}s`,
+                                    animationDuration: '2s',
+                                    animationIterationCount: 'infinite'
+                                  }}
+                                />
+                                <span className="leading-tight">{service}</span>
+                                <motion.i 
+                                  className="fas fa-arrow-right text-xs ml-auto opacity-0 group-hover:opacity-100"
+                                  initial={{ x: -10, opacity: 0 }}
+                                  whileHover={{ x: 0, opacity: 1 }}
+                                  transition={{ duration: 0.2 }}
+                                />
+                              </a>
+                            </Link>
                           </motion.li>
                         ))}
                       </motion.ul>
