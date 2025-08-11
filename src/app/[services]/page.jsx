@@ -57,145 +57,50 @@ export default function ServicePage() {
       </div>
     );
 
-  // Helper to truncate text to minWordCount
-  const truncateText = (text, minWords) => {
-    const words = text.trim().split(/\s+/);
-    if (words.length <= minWords) return text;
-    return words.slice(0, minWords).join(" ") + "...";
-  };
-
-  // Helper to render arrays and objects with animation and hover, with truncation and read more
-  const renderValue = (value, fieldKey) => {
-    // For string
-    if (typeof value === "string") {
-      const words = value.trim().split(/\s+/);
-      const isTruncated = words.length > minWordCount && !expandedFields[fieldKey];
-      return (
-        <>
-          <span>{isTruncated ? truncateText(value, minWordCount) : value}</span>
-          {isTruncated && (
-            <button
-              className="ml-2 text-blue-600 underline cursor-pointer text-sm"
-              onClick={() => setExpandedFields(f => ({ ...f, [fieldKey]: true }))}
-            >
-              Read More
-            </button>
-          )}
-        </>
-      );
-    }
-    // For array
+  // Helper to render arrays and objects with animation and hover, always showing full content
+  const renderValue = (value) => {
     if (Array.isArray(value)) {
-      // Flatten array to string for word count
-      const arrText = value.filter(v => v !== undefined && v !== null).map(v => typeof v === "string" ? v : JSON.stringify(v)).join(" ");
-      const arrWords = arrText.trim().split(/\s+/);
-      const isTruncated = arrWords.length > minWordCount && !expandedFields[fieldKey];
-      let displayArr = value.filter(v => v !== undefined && v !== null);
-      if (isTruncated) {
-        // Truncate array to minWordCount
-        let count = 0;
-        displayArr = [];
-        for (let i = 0; i < value.length; i++) {
-          const v = value[i];
-          if (v === undefined || v === null) continue;
-          const vText = typeof v === "string" ? v : JSON.stringify(v);
-          const vWords = vText.trim().split(/\s+/);
-          if (count + vWords.length > minWordCount) {
-            // Add only needed words from this item
-            const needed = minWordCount - count;
-            displayArr.push(needed > 0 ? (typeof v === "string" ? vWords.slice(0, needed).join(" ") + "..." : v) : null);
-            break;
-          } else {
-            displayArr.push(v);
-            count += vWords.length;
-          }
-        }
-      }
       return (
-        <>
-          <motion.ul className="list-disc ml-6 space-y-1 w-full" initial="hidden" animate="visible" variants={{hidden: {}, visible: {transition: {staggerChildren: 0.05}}}}>
-            {displayArr.filter(v => v !== undefined && v !== null).map((v, i) =>
-              typeof v === "object" ? (
-                <motion.li
-                  key={i}
-                  whileHover={{ scale: 1.04, backgroundColor: '#f0f6ff' }}
-                  className="rounded px-2 py-1 transition-colors"
-                >
-                  {v && typeof v === "object" ? (
-                    <motion.ul className="list-none ml-0">
-                      {Object.entries(v).filter(([k, val]) => val !== undefined && val !== null).map(([k, val]) => (
-                        <motion.li key={k} whileHover={{ color: '#2563eb' }} className="transition-colors">
-                          <span className="font-semibold">{k}:</span> {val}
-                        </motion.li>
-                      ))}
-                    </motion.ul>
-                  ) : null}
-                </motion.li>
-              ) : (
-                <motion.li
-                  key={i}
-                  whileHover={{ scale: 1.04, color: '#2563eb', backgroundColor: '#f0f6ff' }}
-                  className="rounded px-2 py-1 transition-colors"
-                >
-                  {v}
-                </motion.li>
-              )
-            )}
-          </motion.ul>
-          {isTruncated && (
-            <button
-              className="ml-2 text-blue-600 underline cursor-pointer text-sm"
-              onClick={() => setExpandedFields(f => ({ ...f, [fieldKey]: true }))}
-            >
-              Read More
-            </button>
+        <motion.ul className="list-disc ml-6 space-y-1 w-full" initial="hidden" animate="visible" variants={{hidden: {}, visible: {transition: {staggerChildren: 0.05}}}}>
+          {value.filter(v => v !== undefined && v !== null).map((v, i) =>
+            typeof v === "object" ? (
+              <motion.li
+                key={i}
+                whileHover={{ scale: 1.04, backgroundColor: '#f0f6ff' }}
+                className="rounded px-2 py-1 transition-colors"
+              >
+                {v && typeof v === "object" ? (
+                  <motion.ul className="list-none ml-0">
+                    {Object.entries(v).filter(([k, val]) => val !== undefined && val !== null).map(([k, val]) => (
+                      <motion.li key={k} whileHover={{ color: '#2563eb' }} className="transition-colors">
+                        <span className="font-semibold">{k}:</span> {val}
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                ) : null}
+              </motion.li>
+            ) : (
+              <motion.li
+                key={i}
+                whileHover={{ scale: 1.04, color: '#2563eb', backgroundColor: '#f0f6ff' }}
+                className="rounded px-2 py-1 transition-colors"
+              >
+                {v}
+              </motion.li>
+            )
           )}
-        </>
+        </motion.ul>
       );
     }
-    // For object
     if (typeof value === "object" && value !== null) {
-      // Flatten object to string for word count
-      const objText = Object.values(value).filter(v => v !== undefined && v !== null).map(v => typeof v === "string" ? v : JSON.stringify(v)).join(" ");
-      const objWords = objText.trim().split(/\s+/);
-      const isTruncated = objWords.length > minWordCount && !expandedFields[fieldKey];
-      let displayObj = value;
-      if (isTruncated) {
-        // Truncate object values to minWordCount
-        let count = 0;
-        displayObj = {};
-        for (const [k, v] of Object.entries(value)) {
-          if (v === undefined || v === null) continue;
-          const vText = typeof v === "string" ? v : JSON.stringify(v);
-          const vWords = vText.trim().split(/\s+/);
-          if (count + vWords.length > minWordCount) {
-            const needed = minWordCount - count;
-            displayObj[k] = needed > 0 ? (typeof v === "string" ? vWords.slice(0, needed).join(" ") + "..." : v) : null;
-            break;
-          } else {
-            displayObj[k] = v;
-            count += vWords.length;
-          }
-        }
-      }
       return (
-        <>
-          <motion.ul className="list-none ml-0 w-full" initial="hidden" animate="visible" variants={{hidden: {}, visible: {transition: {staggerChildren: 0.05}}}}>
-            {Object.entries(displayObj).filter(([k, val]) => val !== undefined && val !== null).map(([k, val]) => (
-              <motion.li key={k} whileHover={{ color: '#2563eb', scale: 1.04,  }} className="rounded px-2 py-1 transition-colors">
-                <span className="font-semibold">{k}:</span> {val}
-              </motion.li>
-            ))}
-          </motion.ul>
-          {isTruncated && (
-            <button
-              className="ml-2 text-blue-600 underline cursor-pointer text-sm"
-              onClick={() => setExpandedFields(f => ({ ...f, [fieldKey]: true }))}
-            >
-              Read More
-            </button>
-          )}
-        </>
+        <motion.ul className="list-none ml-0 w-full" initial="hidden" animate="visible" variants={{hidden: {}, visible: {transition: {staggerChildren: 0.05}}}}>
+          {Object.entries(value).filter(([k, val]) => val !== undefined && val !== null).map(([k, val]) => (
+            <motion.li key={k} whileHover={{ color: '#2563eb', scale: 1.04,  }} className="rounded px-2 py-1 transition-colors">
+              <span className="font-semibold">{k}:</span> {val}
+            </motion.li>
+          ))}
+        </motion.ul>
       );
     }
     return <span>{value}</span>;
@@ -261,7 +166,7 @@ export default function ServicePage() {
                       className="text-gray-700 text-lg w-full"
                       whileHover={{ scale: 1.01 }}
                     >
-                      {renderValue(value, key)}
+                      {renderValue(value)}
                     </motion.div>
                   </motion.div>
                 ))}

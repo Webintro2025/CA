@@ -8,6 +8,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isStickyServicesOpen, setIsStickyServicesOpen] = useState(false);
   const { scrollY } = useScroll();
 
   // Handle scroll detection
@@ -222,7 +223,7 @@ const Navbar = () => {
             <motion.li 
               className="cursor-pointer relative font-normal text-gray-700 z-[10000]"
               variants={menuItemVariants}
-              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseEnter={() => { setIsServicesOpen(true); setIsStickyServicesOpen(false); }}
               onMouseLeave={() => setIsServicesOpen(false)}
               whileHover={{ 
                 scale: 1.1,
@@ -252,7 +253,7 @@ const Navbar = () => {
               
               {/* Updated Dropdown Menu with Scroll */}
               <AnimatePresence>
-                {isServicesOpen && (
+                {isServicesOpen && !isStickyServicesOpen && (
                   <motion.div
                     className="absolute top-full left-0 w-72 bg-white rounded-lg shadow-xl border border-gray-200 py-3 z-[99999]"
                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
@@ -582,8 +583,8 @@ const Navbar = () => {
             <motion.div
               className="cursor-pointer relative font-semibold text-gray-700 z-[10000]"
               variants={stickyItemVariants}
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
+              onMouseEnter={() => { setIsStickyServicesOpen(true); setIsServicesOpen(false); }}
+              onMouseLeave={() => setIsStickyServicesOpen(false)}
               whileHover={{ 
                 scale: 1.05,
                 color: "#374151",
@@ -612,7 +613,7 @@ const Navbar = () => {
               
               {/* Updated Dropdown Menu for Sticky Navbar with Scroll */}
               <AnimatePresence>
-                {isServicesOpen && (
+                {isStickyServicesOpen && !isServicesOpen && (
                   <motion.div
                     className="absolute top-full left-0 w-72 bg-white rounded-lg shadow-xl border border-gray-200 py-3 z-[99999]"
                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
