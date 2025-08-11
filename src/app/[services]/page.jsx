@@ -114,27 +114,53 @@ export default function ServicePage() {
       transition={{ duration: 0.7, ease: "easeOut" }}
       style={{ minHeight: '80vh' }}
     >
-      <motion.h1
-        className="text-4xl md:text-5xl font-extrabold text-blue-700 mb-8 mt-8 drop-shadow-lg text-center w-full"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.7, type: "spring" }}
-        whileHover={{ scale: 1.03, color: "#1e40af" }}
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '2rem',
+          width: '100%',
+          marginTop: '2rem',
+          marginBottom: '2rem',
+          padding: '2.5rem 2rem',
+          borderRadius: '2rem',
+          background: 'linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%)',
+          boxShadow: '0 8px 32px rgba(33,147,176,0.15)',
+          minHeight: '340px',
+        }}
       >
-        {service.title}
-      </motion.h1>
-      {service.image && (
-        <motion.img
-          src={`/${service.image}`}
-          alt={service.title}
-          className="mx-auto mb-10 w-[320px] h-[320px] md:w-[600px] md:h-[600px] object-contain rounded-2xl shadow-2xl border border-blue-200  transition-all duration-300"
-          initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 0.7, type: "spring", stiffness: 120 }}
-          whileHover={{ scale: 1.07, rotate: 2, boxShadow: "0 8px 32px #60a5fa33" }}
-          style={{ maxWidth: 600, maxHeight: 600 }}
-        />
-      )}
+        <motion.h1
+          className="font-extrabold drop-shadow-lg"
+          initial={{ opacity: 0, x: -80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.7, type: "spring" }}
+          whileHover={{ scale: 1.05, color: "#fff" }}
+          style={{
+            fontSize: '3rem',
+            color: '#fff',
+            margin: 0,
+            textAlign: 'left',
+            flex: 1,
+            letterSpacing: '1px',
+            textShadow: '0 2px 8px rgba(33,147,176,0.2)',
+          }}
+        >
+          {service.title}
+        </motion.h1>
+        {service.image && (
+          <motion.img
+            src={`/${service.image}`}
+            alt={service.title}
+            className="object-contain rounded-2xl shadow-2xl border border-blue-200 transition-all duration-300"
+            initial={{ opacity: 0, x: 80, scale: 0.8, rotate: -10 }}
+            animate={{ opacity: 1, x: 0, scale: 1, rotate: 0 }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
+            whileHover={{ scale: 1.09, rotate: 2, boxShadow: "0 8px 32px #60a5fa33" }}
+            style={{ maxWidth: 340, maxHeight: 340, marginRight: '0.5rem' }}
+          />
+        )}
+      </div>
       <div className="flex-1 w-full max-w-full mx-0 px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {(() => {
