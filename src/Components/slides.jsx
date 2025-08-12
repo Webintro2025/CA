@@ -50,7 +50,7 @@ const Slides = () => {
 
   return (
     <motion.section 
-      className="w-full py-8 bg-gradient-to-b from-slate-50 to-white overflow-hidden"
+  className="w-full py-8 bg-gradient-to-b from-slate-50 to-white overflow-x-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -63,7 +63,7 @@ const Slides = () => {
       >
         {/* Full Width Sliding Container - Increased height */}
         <motion.div 
-          className="relative overflow-hidden bg-gradient-to-r from-blue-50 via-white to-slate-50 py-20 w-full"
+          className="relative overflow-x-hidden bg-gradient-to-r from-blue-50 via-white to-slate-50 py-20 w-full"
           variants={slideVariants}
           whileHover={{ 
             scale: 1.005,
@@ -97,7 +97,7 @@ const Slides = () => {
                 }}
               >
                 <motion.div
-                  className="w-[200px] h-[100px] rounded-xl overflow-hidden shadow-xl border-2 border-white group-hover:border-blue-400 transition-all duration-300"
+                  className="w-[200px] h-[100px] rounded-xl overflow-x-hidden shadow-xl border-2 border-white group-hover:border-blue-400 transition-all duration-300"
                   whileHover={{
                     boxShadow: "0 15px 30px rgba(59, 130, 246, 0.3)",
                     transition: { duration: 0.3 }
@@ -183,7 +183,7 @@ const Slides = () => {
                 }}
               >
                 <motion.div
-                  className="w-[200px] h-[100px] rounded-xl overflow-hidden shadow-xl border-2 border-white group-hover:border-blue-400 transition-all duration-300"
+                  className="w-[200px] h-[100px] rounded-xl overflow-x-hidden shadow-xl border-2 border-white group-hover:border-blue-400 transition-all duration-300"
                   whileHover={{
                     boxShadow: "0 15px 30px rgba(59, 130, 246, 0.3)",
                     transition: { duration: 0.3 }

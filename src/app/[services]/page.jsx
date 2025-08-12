@@ -3,6 +3,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import servicesData from "@/servicesData";
+import GetInTouch from "@/Components/GetInTouch";
 export default function ServicePage() {
   const searchParams = useSearchParams();
   const name = searchParams.get("name");
@@ -108,21 +109,15 @@ export default function ServicePage() {
 
   return (
     <motion.div
-      className="w-full  max-w-full mx-0 p-0 md:p-8 bg-gradient-to-br from-blue-50 via-white to-blue-100  shadow-2xl border border-blue-100 flex flex-col items-center justify-start"
+      className="w-full max-w-full mx-0 p-0 md:p-8 px-4 sm:px-6 md:px-8 bg-gradient-to-br from-blue-50 via-white to-blue-100 shadow-2xl border border-blue-100 flex flex-col items-center justify-start"
       initial={{ opacity: 0, y: 60, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
       style={{ minHeight: '80vh' }}
     >
       <div
+        className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 w-full mt-8 mb-8 px-0"
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '2rem',
-          width: '100%',
-          marginTop: '2rem',
-          marginBottom: '2rem',
           padding: '2.5rem 2rem',
           borderRadius: '2rem',
           background: 'linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%)',
@@ -131,13 +126,12 @@ export default function ServicePage() {
         }}
       >
         <motion.h1
-          className="font-extrabold drop-shadow-lg"
+          className="font-extrabold drop-shadow-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-0"
           initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 0.7, type: "spring" }}
           whileHover={{ scale: 1.05, color: "#fff" }}
           style={{
-            fontSize: '3rem',
             color: '#fff',
             margin: 0,
             textAlign: 'left',
@@ -152,12 +146,12 @@ export default function ServicePage() {
           <motion.img
             src={`/${service.image}`}
             alt={service.title}
-            className="object-contain rounded-2xl shadow-2xl border border-blue-200 transition-all duration-300"
+            className="object-contain rounded-2xl shadow-2xl border border-blue-200 transition-all duration-300 max-w-[220px] max-h-[220px] md:max-w-[340px] md:max-h-[340px] md:ml-4"
             initial={{ opacity: 0, x: 80, scale: 0.8, rotate: -10 }}
             animate={{ opacity: 1, x: 0, scale: 1, rotate: 0 }}
             transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
             whileHover={{ scale: 1.09, rotate: 2, boxShadow: "0 8px 32px #60a5fa33" }}
-            style={{ maxWidth: 340, maxHeight: 340, marginRight: '0.5rem' }}
+            style={{ marginRight: '0.5rem' }}
           />
         )}
       </div>
@@ -182,14 +176,14 @@ export default function ServicePage() {
                     viewport={{ once: true }}
                   >
                     <motion.h2
-                      className="capitalize text-xl font-bold text-blue-600 mb-3 tracking-wide w-full"
+                      className="capitalize font-bold text-blue-600 mb-3 tracking-wide w-full text-base sm:text-lg md:text-xl lg:text-2xl"
                       whileHover={{ scale: 1.06, color: "#1e40af" }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       {key.replace(/_/g, " ")}
                     </motion.h2>
                     <motion.div
-                      className="text-gray-700 text-lg w-full"
+                      className="text-gray-700 w-full text-sm sm:text-base md:text-lg lg:text-xl"
                       whileHover={{ scale: 1.01 }}
                     >
                       {renderValue(value)}
@@ -201,6 +195,7 @@ export default function ServicePage() {
           })()}
         </div>
       </div>
+      <GetInTouch />
     </motion.div>
   );
 }

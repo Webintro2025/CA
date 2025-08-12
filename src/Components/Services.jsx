@@ -302,7 +302,7 @@ const Services = () => {
             </motion.div>
             <motion.div 
               ref={scrollContainerRef}
-              className="max-h-[400px] sm:max-h-[500px] md:max-h-[600px] overflow-y-auto pr-2 sm:pr-4 space-y-3 sm:space-y-4 scrollbar-thin scrollbar-thumb-sky-400 scrollbar-track-gray-200 relative"
+              className="max-h-[400px] sm:max-h-[500px] md:max-h-[600px] overflow-x-hidden pr-2 sm:pr-4 space-y-3 sm:space-y-4 scrollbar-thin scrollbar-thumb-sky-400 scrollbar-track-gray-200 relative"
               variants={containerVariants}
               onScroll={handleScroll}
               onMouseEnter={() => setIsAutoScrolling(false)}

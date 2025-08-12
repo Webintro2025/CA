@@ -113,7 +113,7 @@ const Teams = () => {
               custom={index}
             >
               <motion.div
-                className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-gray-200 h-full relative overflow-hidden"
+                className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-gray-200 h-full relative overflow-x-hidden"
                 whileHover={{ 
                   scale: 1.03,
                   boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
@@ -229,7 +229,7 @@ const Teams = () => {
           variants={cardVariants}
         >
           <motion.div 
-            className="bg-gradient-to-r from-sky-400 to-gray-600 rounded-2xl p-4 sm:p-6 md:p-8 text-white relative overflow-hidden"
+            className="bg-gradient-to-r from-sky-400 to-gray-600 rounded-2xl p-4 sm:p-6 md:p-8 text-white relative overflow-x-hidden"
             whileHover={{ 
               scale: 1.02,
               boxShadow: "0 25px 50px rgba(14, 165, 233, 0.3)"

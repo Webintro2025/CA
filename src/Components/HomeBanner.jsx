@@ -174,7 +174,7 @@ const HomeBanner = () => {
 
   return (
     <motion.div 
-      className="relative w-full h-[28vh] sm:h-[35vh] md:h-[60vh] lg:h-[70vh] overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-800"
+  className="relative w-full h-[28vh] sm:h-[35vh] md:h-[60vh] lg:h-[70vh] overflow-x-hidden bg-gradient-to-r from-blue-100 via-white to-blue-300 shadow-2xl border border-blue-200"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -582,42 +582,42 @@ const HomeBanner = () => {
       {/* Navigation Arrows */}
       <motion.button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-3 rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-blue-600/80 transition-all duration-300"
+  className="absolute left-3 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 md:p-3 bg-white/80 hover:bg-blue-200 text-blue-700 border border-blue-200 shadow-lg transition-all duration-300"
         variants={buttonVariants}
         whileHover="hover"
         whileTap="tap"
         initial="hidden"
         animate="visible"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+  <svg className="w-3 h-3 sm:w-7 sm:h-7 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
         </svg>
       </motion.button>
 
       <motion.button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-3 rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-blue-600/80 transition-all duration-300"
+  className="absolute right-3 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 md:p-3 bg-white/80 hover:bg-blue-200 text-blue-700 border border-blue-200 shadow-lg transition-all duration-300"
         variants={buttonVariants}
         whileHover="hover"
         whileTap="tap"
         initial="hidden"
         animate="visible"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+  <svg className="w-3 h-3 sm:w-7 sm:h-7 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
         </svg>
       </motion.button>
 
       {/* Dot Indicators */}
       <motion.div 
-        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 flex space-x-3"
+        className="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 flex space-x-4"
         variants={containerVariants}
       >
         {banners.map((_, index) => (
           <motion.button
             key={index}
             onClick={() => goToSlide(index)}
-            className="w-3 h-3 rounded-full transition-all duration-300"
+            className={`w-1.5 h-1.5 sm:w-4 sm:h-4 md:w-4 md:h-4 border-2 border-blue-200 transition-all duration-300 ${index === currentIndex ? 'bg-blue-400 shadow-lg' : 'bg-white/70'}`}
             variants={dotVariants}
             animate={index === currentIndex ? "active" : "inactive"}
             whileHover={{ scale: 1.2 }}

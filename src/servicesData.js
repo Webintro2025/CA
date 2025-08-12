@@ -425,8 +425,8 @@ const servicesData =
     // Society Registration: already has all three fields
     "title": "Society Registration in India",
     "image": "Society.png",
-    "introduction": "A Society is an organized group of individuals who come together for a common charitable, cultural, religious, educational, or social objective...",
-    "definition": "Society registration is the process of legally recognizing a group formed for non-commercial purposes. Once registered, the society becomes a legal entity separate from its members...",
+    "introduction": "A Society is a legally recognized association formed by a group of individuals who unite for a shared purpose—often charitable, cultural, religious, educational, or social in nature. Unlike profit-driven entities, societies operate primarily to serve their members and the larger community, focusing on activities that promote welfare, knowledge, culture, and social development.",
+    "definition": "Society registration is the formal process of granting legal recognition to a group of individuals who have come together for non-commercial purposes such as charity, culture, education, religion, or social welfare. Through registration under the Societies Registration Act, 1860 (or the relevant state act), the society acquires a distinct legal identity separate from its members. ",
     "purpose": [
       "Promotion of art, culture, or literature",
       "Charity and relief efforts",
@@ -463,7 +463,8 @@ const servicesData =
       "Draft MoA and Rules",
       "Collect Documents",
       "File with Registrar",
-      "Verification and Certificate Issuance"
+      "Verification and Certificate Issuance",
+      "Obtain PAN and Bank Account"
     ],
     "key_clauses_moa": [
       "Name of the society",
@@ -491,19 +492,23 @@ const servicesData =
       "Drafts legal documents correctly",
       "Ensures eligibility compliance",
       "Assists with tax and FCRA registrations",
-      "Handles state-specific requirements"
+      "Handles state-specific requirements",
+      "Provides ongoing compliance support",
+      "Offers expert guidance on legal matters"
     ],
-    "conclusion": "Society registration is essential for groups committed to social, charitable, educational, or cultural goals..."
+    "conclusion": "Society registration is an essential step for any group committed to advancing social, charitable, educational, cultural, or religious objectives. By obtaining legal recognition, a society gains the credibility and authority needed to operate effectively, attract funding, and build trust with the public and government bodies. It also ensures transparency, accountability, and the ability to function as an independent legal entity, separate from its members"
   },
   {
     // Trust Registration: already has all three fields
     "title": "Trust Registration in India",
-    "image": "trust.png",
-    "introduction": "A Trust is a legal arrangement in which the owner of certain assets transfers them to a trustee to manage and utilize for the benefit of specific individuals or a general public cause...",
-    "definition": "Trust registration is the legal process of recognizing a trust deed by submitting it to the Registrar of Trusts...",
+    "image": "Trust.png",
+    "introduction": "A Trust is a legal arrangement in which the owner of certain assets, known as the settlor or author of the trust, transfers them to one or more trustees to hold, manage, and utilize for the benefit of specific individuals (beneficiaries) or for a public, charitable, or religious purpose. Trusts are commonly established to promote social welfare, provide educational or medical aid, preserve family wealth, or support cultural ",
+    "definition": "Trust registration is the legal process of formally recognizing a trust through the submission and approval of its trust deed by the Registrar of Trusts (or the relevant authority under state-specific laws). A trust is an arrangement where the founder (also known as the author or settlor) transfers property or assets to trustees, who are legally bound to manage them for the benefit of specified beneficiaries or for a charitable purpose.",
     "types": [
       "Private Trust — Formed for the benefit of specific individuals or families",
-      "Public Trust — Formed for charitable or religious purposes, benefitting the public at large"
+      "Public Trust — Formed for charitable or religious purposes, benefitting the public at large",
+      "Charitable Trust — Established for charitable purposes, with a focus on philanthropy and social welfare",
+      "Religious Trust — Formed to manage and promote religious activities and institutions"
     ],
     "importance": [
       "Legal Recognition & Identity",
@@ -511,12 +516,17 @@ const servicesData =
       "Tax Exemptions",
       "Public Credibility",
       "Bank Accounts & Funding",
-      "Eligibility for Government Schemes & FCRA"
+      "Eligibility for Government Schemes & FCRA",
+      "Compliance with Legal Norms",
+      "Ongoing Support and Guidance"
     ],
     "who_can_form": [
       "Any individual who is competent to contract",
       "Companies, societies, or associations",
-      "Minimum 2 trustees"
+      "Minimum 2 trustees",
+      "Registered Office Address",
+      "Trust Property Details",
+      "Trustee Details"
     ],
     "documents_required": [
       "Trust Deed (in stamp paper)",
@@ -532,7 +542,9 @@ const servicesData =
       "Purchase Non-Judicial Stamp Paper",
       "Get the Deed Notarized",
       "Submit to the Registrar",
-      "Verification and Issuance of Certificate"
+      "Verification and Issuance of Certificate",
+      "Trust Registration Completed",
+      "Trust Deed Execution"
     ],
     "key_clauses_in_deed": [
       "Name of the trust",
@@ -542,9 +554,7 @@ const servicesData =
       "Objectives and mission",
       "Trust property and assets",
       "Powers and duties of trustees",
-      "Meetings and decision-making process",
-      "Bank operations and audits",
-      "Amendment and dissolution provisions"
+   
     ],
     "post_registration_compliances": [
       "Apply for PAN card in trust’s name",
@@ -558,8 +568,7 @@ const servicesData =
       {"Benefit": "Legal protection", "Explanation": "Assets are protected and legally recognized"},
       {"Benefit": "Continuity", "Explanation": "The trust continues regardless of changes in trustees"},
       {"Benefit": "Credibility", "Explanation": "Registration builds trust with donors and institutions"},
-      {"Benefit": "Tax advantages", "Explanation": "12A/80G exemptions benefit both the trust and its donors"},
-      {"Benefit": "Regulatory eligibility", "Explanation": "Registered status enables compliance with CSR/FCRA norms"}
+  
     ],
     "why_professionals": [
       "Drafting a legally sound trust deed",
@@ -568,13 +577,13 @@ const servicesData =
       "Avoiding legal errors",
       "Structuring governance rules clearly"
     ],
-    "conclusion": "Registering a trust is an essential step for individuals or groups aiming to make a difference..."
+    "conclusion": "Registering a trust is a vital step for individuals or organizations seeking to make a lasting social, charitable, or philanthropic impact. Legal registration not only grants the trust formal recognition and a separate identity but also enhances its credibility, accountability, and ability to receive donations or government support. "
   },
   {
     // Import Export Code Registration: already has all three fields
     "title": "Import Export Code Registration",
     "image": "import.png",
-    "introduction": "The Import Export Code (IEC) is a mandatory business identification number required for exporting or importing goods and services from India...",
+    "introduction": "The Import Export Code (IEC) is a mandatory business identification number issued by the Directorate General of Foreign Trade (DGFT), required for any individual or business engaged in the import or export of goods and services from India.",
     "definition": "IEC is a unique code allotted to businesses or individuals who want to undertake import or export activities. It is a one-time registration that is valid for a lifetime and does not require any renewal unless canceled or modified.",
     "applicability": [
       "Proprietorships",
@@ -595,7 +604,9 @@ const servicesData =
       "Exporters of Goods or Services",
       "Importers of Raw Materials or Products",
       "E-commerce Sellers",
-      "Freelancers or Consultants"
+      "Freelancers or Consultants",
+      "Importers of Specific Goods",
+      "Small-scale Industries"
     ],
     "documents_required": [
       "PAN Card",
@@ -604,60 +615,72 @@ const servicesData =
       "Aadhar or Passport",
       "Digital Signature Certificate (DSC)",
       "Email ID and Mobile Number linked to Aadhaar",
-      "Business Registration Proof"
+ 
     ],
     "process": [
       "Visit the DGFT Portal",
       "Fill IEC Application (ANF-2A Form)",
       "Upload Required Documents",
       "Pay the Government Fee",
-      "Verification & Allotment"
+      "Verification & Allotment",
+      "IEC Certificate Generation",
+      "IEC Activation"
     ],
     "certificate_features": [
       "Contains 10-digit code",
       "Issued in the name of the applicant",
       "Valid for all branches/units",
       "Includes QR code",
-      "Delivered in digital format"
+      "Delivered in digital format",
+      "No physical copy issued",
+      "E-certificate available for download"
     ],
     "when_iec_not_required": [
       "For personal use items",
       "Government departments or notified charitable institutions",
-      "Items under DGFT-exempt categories"
+      "Items under DGFT-exempt categories",
+      "Importers of specific goods",
+      "Small-scale industries with limited imports"
     ],
     "post_registration_req": [
       "Link IEC with DGFT Portal",
       "Update IEC annually",
-      "Maintain records for 5 years"
+      "Maintain records for 5 years",
+      "Comply with foreign trade regulations",
+      "Update IEC details as needed",
+      "Renew IEC if business structure changes"
     ],
     "benefits": [
       {"Benefit": "Global Access", "Explanation": "Enables international trade"},
       {"Benefit": "No Compliance Burden", "Explanation": "No monthly/annual filings unless updated"},
       {"Benefit": "Fast Processing", "Explanation": "Digital issue within 1-2 days"},
-      {"Benefit": "Government Schemes", "Explanation": "Eligible for DGFT and customs incentives"},
-      {"Benefit": "Lifetime Validity", "Explanation": "No need to renew"},
-      {"Benefit": "Credibility", "Explanation": "Enhances trust for foreign clients"}
+    
     ],
     "common_use_cases": [
       "A textile manufacturer exporting sarees",
       "IT freelancer with US clients",
       "Trader importing tools",
-      "Company selling via Amazon"
+      "Company selling via Amazon",
+      "Freelancer providing consulting services",
+      "E-commerce business importing goods",
+      
     ],
     "why_professionals": [
       "Avoid errors",
       "KYC compliance",
       "DSC and PAN verification",
-      "Ongoing compliance and scheme linking"
+      "Ongoing compliance and scheme linking",
+      "Expert guidance",
+      "Tailored solutions"
     ],
-    "conclusion": "IEC registration is the first and most critical step in taking your business to a global level..."
+    "conclusion": "IEC registration is the first and most crucial step toward taking your business to the global stage. It grants legal authorization to engage in import and export activities while simplifying procedures for customs clearance, international payments, and trade documentation. By obtaining an IEC, businesses can explore new markets, build global partnerships,"
   },
   {
     // GST Return Filing: already has all three fields
     "title": "GST Return Filing in India",
     "image": "return.png",
-    "introduction": "After obtaining GST registration, the next and most important compliance obligation for a business is filing GST returns...",
-    "definition": "GST Return Filing is the process through which registered taxpayers report their sales, purchases, tax collected, and tax paid to the government.",
+    "introduction": "After obtaining GST registration, the next and most important compliance obligation for a business is filing GST returns. GST return filing is a statutory requirement that ensures businesses report their sales, purchases, and tax liabilities to the government within the prescribed timelines.",
+    "definition": "GST Return Filing is the process by which registered taxpayers furnish details of their business transactions to the government, including sales, purchases, tax collected on sales (output tax), and tax paid on purchases (input tax). These returns are filed periodically—monthly, quarterly, or annually—through the GST portal,",
     "purpose": [
       "Legal Compliance",
       "Input Tax Credit Claim",
@@ -678,15 +701,7 @@ const servicesData =
     "types_of_returns": [
       {"Form": "GSTR-1", "Applicable For": "Regular taxpayers", "Frequency": "Monthly", "Purpose": "Outward supplies"},
       {"Form": "GSTR-3B", "Applicable For": "Regular taxpayers", "Frequency": "Monthly", "Purpose": "Summary of supplies"},
-      {"Form": "GSTR-4", "Applicable For": "Composition scheme", "Frequency": "Annually", "Purpose": "Compounding taxpayers"},
-      {"Form": "GSTR-5", "Applicable For": "Non-resident taxpayer", "Frequency": "Monthly", "Purpose": "Summary return"},
-      {"Form": "GSTR-6", "Applicable For": "ISDs", "Frequency": "Monthly", "Purpose": "ITC distributed"},
-      {"Form": "GSTR-7", "Applicable For": "TDS deductors", "Frequency": "Monthly", "Purpose": "TDS deducted"},
-      {"Form": "GSTR-8", "Applicable For": "E-commerce operators", "Frequency": "Monthly", "Purpose": "TCS collected"},
-      {"Form": "GSTR-9", "Applicable For": "Regular taxpayers", "Frequency": "Annually", "Purpose": "Annual summary"},
-      {"Form": "GSTR-9C", "Applicable For": "Audit cases", "Frequency": "Annually", "Purpose": "Reconciliation statement"},
-      {"Form": "GSTR-10", "Applicable For": "Cancellation cases", "Frequency": "Once", "Purpose": "Final return"},
-      {"Form": "GSTR-11", "Applicable For": "UIN holders", "Frequency": "Monthly", "Purpose": "Inward supplies"}
+      
     ],
     "process": [
       "Login to GST Portal",
@@ -704,7 +719,8 @@ const servicesData =
     "composition_scheme_filing": [
       "File GSTR-4 annually and CMP-08 quarterly",
       "Cannot claim Input Tax Credit",
-      "Pay tax at a fixed rate"
+      "Pay tax at a fixed rate",
+      "Limited compliance requirements"
     ],
     "timely_filing_benefits": [
       "Smooth ITC Claim",
@@ -728,14 +744,14 @@ const servicesData =
       "Missing deadlines",
       "Not paying tax before filing"
     ],
-    "conclusion": "GST Return Filing is a core compliance function for any GST-registered business in India..."
+    "conclusion": "GST Return Filing is a core compliance function for any GST-registered business in India. It ensures transparency in tax reporting, facilitates the smooth claiming of Input Tax Credit (ITC), and keeps the business in good standing with tax authorities."
   },
   {
   // Bookkeeping Services: cleaned up and enriched
     "title": "Bookkeeping Services in India",
     "image": "account.png",
-    "introduction": "Bookkeeping is the foundation of every business’s financial system...",
-    "definition": "Bookkeeping services refer to the systematic recording of all financial transactions—purchases, sales, receipts, payments—conducted by a business.",
+    "introduction": "Bookkeeping is the foundation of every business’s financial system, involving the systematic recording, organizing, and tracking of financial transactions. It ensures that all income, expenses, assets, and liabilities are accurately documented, providing a clear and up-to-date picture of the business’s financial health.",
+    "definition": "Bookkeeping services refer to the systematic process of recording, classifying, and organizing all financial transactions of a business, including purchases, sales, receipts, and payments. These records form the basis for preparing financial statements, tracking cash flow, and ensuring accurate tax reporting. ",
     "services_included": [
       "Recording daily transactions",
       "Maintaining ledgers",
@@ -743,8 +759,7 @@ const servicesData =
       "Payroll management",
       "Managing accounts receivable and payable",
       "Inventory tracking",
-      "Tax and GST reconciliation",
-      "Financial reporting and analysis"
+    
     ],
     "importance": [
       "Accurate Financial Records",
@@ -763,16 +778,15 @@ const servicesData =
     ],
     "types_of_systems": [
       "Single Entry System",
-      "Double Entry System"
+      "Double Entry System",
+      "Hybrid System",
+      "Cash Basis System"
     ],
     "key_components": [
       {"Component": "Sales Ledger", "Description": "Records customer invoices and payments"},
       {"Component": "Purchase Ledger", "Description": "Tracks vendor bills and payments"},
-      {"Component": "Cash Book", "Description": "Maintains petty cash and day-to-day cash flow"},
-      {"Component": "Bank Reconciliation", "Description": "Matches company’s books with bank statements"},
-      {"Component": "Payroll Management", "Description": "Manages salaries, TDS, PF, ESI"},
-      {"Component": "Tax Reports", "Description": "Maintains GST ledgers and tax records"},
-      {"Component": "Trial Balance", "Description": "Snapshot before final accounts"}
+   
+
     ],
     "tools": [
       "Tally ERP",
@@ -785,14 +799,14 @@ const servicesData =
       {"Benefit": "Cost-Effective", "Explanation": "Avoids hiring a full-time accountant"},
       {"Benefit": "Expertise", "Explanation": "Skilled in latest tax laws"},
       {"Benefit": "Accuracy", "Explanation": "Reduces errors"},
-      {"Benefit": "Scalability", "Explanation": "Services grow with business"},
-      {"Benefit": "Data Security", "Explanation": "Secure storage and backup"}
+ 
     ],
     "how_supports_taxation": [
       "Track input and output GST",
       "Ensure TDS deduction and deposit",
       "Calculate net income and tax payable",
-      "Documentary evidence for audit"
+      "Documentary evidence for audit",
+      "Support during tax assessments"
     ],
     "common_mistakes": [
       "Mixing personal and business finances",
@@ -807,8 +821,8 @@ const servicesData =
   // GST Registration: cleaned up and enriched
     "title": "GST Registration",
     "image": "registrationgst.png",
-    "introduction": "GST Registration is the process of obtaining a unique Goods and Services Tax Identification Number (GSTIN) from the Indian government, which is mandatory for businesses exceeding the prescribed turnover threshold or engaging in specific activities.",
-    "definition": "GST Registration is a legal process that recognizes a business as a supplier of goods or services liable to collect and remit GST. It enables businesses to claim input tax credit and comply with GST law.",
+    "introduction": "GST Registration is the process of obtaining a unique Goods and Services Tax Identification Number (GSTIN) from the Government of India. It is mandatory for businesses whose annual turnover exceeds the prescribed threshold limit or for those engaged in specific types of interstate or taxable supply activities, regardless of turnover. This registration enables businesses to collect GST from customers, claim input tax credit, and comply with the country’s indirect tax laws.",
+    "definition": "GST Registration is the legal process through which a business is officially recognized as a supplier of goods or services liable to collect and remit Goods and Services Tax (GST) to the government. Upon registration, the business is assigned a unique Goods and Services Tax Identification Number (GSTIN), which must be quoted in all GST-related transactions and documents. This registration allows businesses to lawfully charge GST on their supplies, claim Input Tax Credit (ITC) on eligible purchases, and operate in compliance with GST regulations.",
     "who_should_register": [
       "Businesses with aggregate turnover above the threshold limit (₹40 lakh/₹20 lakh/₹10 lakh as applicable)",
       "E-commerce sellers and aggregators",
@@ -835,8 +849,7 @@ const servicesData =
       "Receive OTP and complete verification",
       "Fill Part-B of Form GST REG-01 (business details, upload documents)",
       "Application reference number (ARN) generated",
-      "Application processed by GST officer",
-      "GSTIN and certificate issued upon approval"
+  
     ],
     "benefits": [
       "Legal recognition as a supplier of goods/services",
@@ -844,14 +857,19 @@ const servicesData =
       "Seamless interstate sales",
       "Improved business credibility",
       "Access to government tenders and contracts",
-      "Bank loan and funding eligibility"
+      "Bank loan and funding eligibility",
+      "Enhanced business reputation",
+   
     ],
     "types_of_registration": [
       "Normal taxpayer",
       "Composition scheme taxpayer",
       "Casual taxable person",
       "Non-resident taxable person",
-      "E-commerce operator"
+      "E-commerce operator",
+      "Input Service Distributor (ISD)",
+      "Special Economic Zone (SEZ) developer",
+      "Others"
     ],
     "threshold_limits": [
       {"State": "Most States (Goods)", "Limit": "₹40 lakh"},

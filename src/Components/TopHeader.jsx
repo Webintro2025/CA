@@ -63,10 +63,10 @@ const TopHeader = () => {
           >
             <span className="text-blue-300">📱</span>
             <a 
-              href="tel:+919821575784"
+              href="tel:+919971669475"
               className="hover:text-blue-300 transition-colors duration-200"
             >
-              9821575784
+              9971669475
             </a>
           </motion.div>
           
@@ -122,7 +122,7 @@ const TopHeader = () => {
             <div className="flex flex-col">
               <div className="flex items-center justify-end space-x-1 md:space-x-2">
                 <span className="text-orange-300">⭐</span>
-                <span className="text-blue-300 font-semibold">CA firm since 1990</span>
+                <span className="text-blue-300 font-semibold">Providing services since 1990</span>
               </div>
               <div className="text-gray-300 text-[10px] md:text-xs mt-0.5 md:mt-1">
                 Now coming in tech enable way to revolutionize tax consultancy

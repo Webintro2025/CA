@@ -83,9 +83,7 @@ const Footer = () => {
                     src="/log.jpg" 
                     width={60}
                     whileHover={{ 
-                      rotate: [0, -5, 5, 0],
-                      scale: 1.1,
-                      transition: { duration: 0.5 }
+                      rotate: [0, -5, 5, 0]
                     }}
                   />
                   <motion.h1 
@@ -124,17 +122,14 @@ const Footer = () => {
 
           {/* Services and Quick Links - Side by Side on Mobile */}
           <div className="grid grid-cols-2 gap-4 lg:contents">
-            {/* Services */}
+            {/* Services Section */}
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
             >
               <motion.h3 
                 className="text-base lg:text-lg font-semibold text-white mb-1"
-                whileHover={{ 
-                  color: "#60A5FA",
-                  transition: { duration: 0.3 }
-                }}
+                whileHover={{ color: "#60A5FA", transition: { duration: 0.3 } }}
               >
                 Our Services
               </motion.h3>
@@ -151,53 +146,62 @@ const Footer = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
+                {/*
+                { name: "Company Registration", link: "/services/company-registration" },
+                { name: "LLP Registration", link: "/services/llp-registration" },
+                { name: "Partnership Firm Registration", link: "/services/partnership-registration" },
+                { name: "Sole Proprietorship Registration", link: "/services/sole-proprietorship" },
+                { name: "MSME Registration", link: "/services/msme-registration" },
+                { name: "Startupindia Registration", link: "/services/startup-registration" },
+                { name: "Society Registration", link: "/services/society-registration" },
+                { name: "Trust Registration", link: "/services/trust-registration" },
+                { name: "Import Export Code Registration", link: "/services/iec-registration" },
+                { name: "GST Registration", link: "/services/gst-registration" },
+                { name: "GST Return Filing", link: "/services/gst-return-filing" },
+                { name: "Bookkeeping Services", link: "/services/bookkeeping" }
+                */}
                 {[
-                  { name: "Company Registration", link: "/services/company-registration" },
-                  { name: "LLP Registration", link: "/services/llp-registration" }, 
-                  { name: "Partnership Firm Registration", link: "/services/partnership-registration" },
-                  { name: "Sole Proprietorship Registration", link: "/services/sole-proprietorship" },
-                  { name: "MSME Registration", link: "/services/msme-registration" },
-                  { name: "Startupindia Registration", link: "/services/startup-registration" },
-                  { name: "Society Registration", link: "/services/society-registration" },
-                  { name: "Trust Registration", link: "/services/trust-registration" },
-                  { name: "Import Export Code Registration", link: "/services/iec-registration" },
-                  { name: "GST Registration", link: "/services/gst-registration" },
-                  { name: "GST Return Filing", link: "/services/gst-return-filing" },
-                  { name: "Bookkeeping Services", link: "/services/bookkeeping" }
+                  { name: "Company Registration" },
+                  { name: "LLP Registration" },
+                  { name: "Partnership Firm Registration" },
+                  { name: "Sole Proprietorship Registration" },
+                  { name: "MSME Registration" },
+                  { name: "Startupindia Registration" },
+                  { name: "Society Registration" },
+                  { name: "Trust Registration" },
+                  { name: "Import Export Code Registration" },
+                  { name: "GST Registration" },
+                  { name: "GST Return Filing" },
+                  { name: "Bookkeeping Services" }
                 ].map((service, index) => (
                   <motion.li 
                     key={index}
                     className="cursor-pointer"
                     variants={listItemVariants}
                   >
-                    <Link href={service.link}>
-                      <motion.span
-                        className="inline-block"
-                        whileHover={{ 
-                          color: "#60A5FA",
-                          x: 8,
-                          transition: { duration: 0.3 }
-                        }}
-                      >
-                        {service.name}
-                      </motion.span>
+                    <Link href={`/services?name=${encodeURIComponent(service.name)}`} legacyBehavior>
+                      <a>
+                        <motion.span
+                          className="inline-block"
+                          whileHover={{ color: "#60A5FA", x: 8, transition: { duration: 0.3 } }}
+                        >
+                          {service.name}
+                        </motion.span>
+                      </a>
                     </Link>
                   </motion.li>
                 ))}
               </motion.ul>
             </motion.div>
 
-            {/* Quick Links */}
+            {/* Quick Links Section */}
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
             >
               <motion.h3 
                 className="text-base lg:text-lg font-semibold text-white mb-1"
-                whileHover={{ 
-                  color: "#60A5FA",
-                  transition: { duration: 0.3 }
-                }}
+                whileHover={{ color: "#60A5FA", transition: { duration: 0.3 } }}
               >
                 Quick Links
               </motion.h3>
@@ -218,11 +222,7 @@ const Footer = () => {
                   <Link href="/">
                     <motion.span
                       className="cursor-pointer inline-block"
-                      whileHover={{ 
-                        color: "#60A5FA",
-                        x: 8,
-                        transition: { duration: 0.3 }
-                      }}
+                      whileHover={{ color: "#60A5FA", x: 8, transition: { duration: 0.3 } }}
                     >
                       Home
                     </motion.span>
@@ -232,41 +232,9 @@ const Footer = () => {
                   <Link href="/about">
                     <motion.span
                       className="cursor-pointer inline-block"
-                      whileHover={{ 
-                        color: "#60A5FA",
-                        x: 8,
-                        transition: { duration: 0.3 }
-                      }}
+                      whileHover={{ color: "#60A5FA", x: 8, transition: { duration: 0.3 } }}
                     >
                       About Us
-                    </motion.span>
-                  </Link>
-                </motion.li>
-                <motion.li variants={listItemVariants}>
-                  <Link href="/services">
-                    <motion.span
-                      className="cursor-pointer inline-block"
-                      whileHover={{ 
-                        color: "#60A5FA",
-                        x: 8,
-                        transition: { duration: 0.3 }
-                      }}
-                    >
-                      Our Services
-                    </motion.span>
-                  </Link>
-                </motion.li>
-                <motion.li variants={listItemVariants}>
-                  <Link href="/team">
-                    <motion.span
-                      className="cursor-pointer inline-block"
-                      whileHover={{ 
-                        color: "#60A5FA",
-                        x: 8,
-                        transition: { duration: 0.3 }
-                      }}
-                    >
-                      Our Team
                     </motion.span>
                   </Link>
                 </motion.li>
@@ -274,43 +242,11 @@ const Footer = () => {
                   <Link href="/contact">
                     <motion.span
                       className="cursor-pointer inline-block"
-                      whileHover={{ 
-                        color: "#60A5FA",
-                        x: 8,
-                        transition: { duration: 0.3 }
-                      }}
+                      whileHover={{ color: "#60A5FA", x: 8, transition: { duration: 0.3 } }}
                     >
                       Contact Us
                     </motion.span>
                   </Link>
-                </motion.li>
-                <motion.li variants={listItemVariants}>
-                  <motion.a 
-                    href="mailto:adishwar@cklotech.com"
-                    className="cursor-pointer inline-block"
-                    whileHover={{ 
-                      color: "#60A5FA",
-                      x: 8,
-                      transition: { duration: 0.3 }
-                    }}
-                  >
-                    Email Us
-                  </motion.a>
-                </motion.li>
-                <motion.li variants={listItemVariants}>
-                  <motion.a 
-                    href="https://wa.me/919821575784"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cursor-pointer inline-block"
-                    whileHover={{ 
-                      color: "#60A5FA",
-                      x: 8,
-                      transition: { duration: 0.3 }
-                    }}
-                  >
-                    WhatsApp Us
-                  </motion.a>
                 </motion.li>
               </motion.ul>
             </motion.div>

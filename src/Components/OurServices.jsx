@@ -242,7 +242,7 @@ const OurServices = () => {
             >
               {/* Service Image */}
               <motion.div 
-                className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-transparent mb-2 sm:mb-3 md:mb-4 mx-auto overflow-hidden p-0 border-0"
+                className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-transparent mb-2 sm:mb-3 md:mb-4 mx-auto overflow-x-hidden p-0 border-0"
                 whileHover={{ 
                   scale: 1.1,
                   transition: { duration: 0.6 }

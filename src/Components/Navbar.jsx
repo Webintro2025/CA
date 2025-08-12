@@ -275,7 +275,7 @@ const Navbar = () => {
 
                     {/* Scrollable Services List */}
                     <motion.div 
-                      className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-gray-100"
+                      className="max-h-64 overflow-x-hidden scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-gray-100"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.2 }}
@@ -422,75 +422,101 @@ const Navbar = () => {
               <span>WhatsApp</span>
             </motion.button>
           </motion.div>
-          <motion.button 
-            aria-label="Open menu" 
-            className="md:hidden text-2xl text-gray-600 focus:outline-none" 
-            type="button"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            whileHover={{ 
-              scale: 1.1,
-              color: "#374151",
-              transition: { duration: 0.3 }
-            }}
-            whileTap={{ scale: 0.9 }}
-            variants={buttonVariants}
-          >
-            <motion.i 
-              className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}
-              animate={{ rotate: isMenuOpen ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
-            ></motion.i>
-          </motion.button>
+          {/* Hamburger Icon for Mobile/Tab - Main Navbar */}
+          <motion.div className="flex md:hidden items-center">
+            <motion.button
+              aria-label="Open menu"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-2xl text-gray-700 hover:text-blue-600 focus:outline-none"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <motion.i 
+                className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}
+                animate={{ rotate: isMenuOpen ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              ></motion.i>
+            </motion.button>
+          </motion.div>
         </motion.nav>
         
         {/* Mobile Menu */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="md:hidden bg-gradient-to-r from-gray-50 to-blue-50 border-t border-gray-200"
+              className={`md:hidden bg-gradient-to-r from-gray-50 to-blue-50 border-t border-gray-200 fixed top-0 left-0 w-full z-[99999] ${isScrolled ? 'mt-[52px]' : ''}`}
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
               <motion.ul className="px-4 py-4 space-y-3">
-                {[
-                  { name: 'Home', href: '/' },
-                  { name: 'About Us', href: '/about' },
-                  { name: 'Our Services', href: '#services' },
-                  { name: 'Contact Us', href: '/contact' }
-                ].map((item, index) => (
-                  <motion.li
-                    key={item.name}
-                    initial={{ x: -50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: index * 0.1, duration: 0.3 }}
-                    className="text-gray-700 font-medium py-2 border-b border-gray-200 cursor-pointer"
-                    whileHover={{ 
-                      x: 10,
-                      color: "#1E40AF",
-                      transition: { duration: 0.3 }
-                    }}
-                  >
-                    <Link href={item.href}>
-                      {item.name}
-                    </Link>
-                  </motion.li>
-                ))}
                 <motion.li
-                  initial={{ x: -50, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.4, duration: 0.3 }}
+                  className="text-gray-700 font-medium py-2 border-b border-gray-200 cursor-pointer"
+                  whileHover={{ x: 10, color: "#1E40AF", transition: { duration: 0.3 } }}
+                >
+                  <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                    Home
+                  </Link>
+                </motion.li>
+                <motion.li
+                  className="text-gray-700 font-medium py-2 border-b border-gray-200 cursor-pointer"
+                  whileHover={{ x: 10, color: "#1E40AF", transition: { duration: 0.3 } }}
+                >
+                  <Link href="/about" onClick={() => setIsMenuOpen(false)}>
+                    About Us
+                  </Link>
+                </motion.li>
+                {/* Our Services with dropdown for mobile */}
+                <motion.li
+                  className="text-gray-700 font-medium py-2 border-b border-gray-200 cursor-pointer relative"
+                  whileHover={{ x: 10, color: "#1E40AF", transition: { duration: 0.3 } }}
+                >
+                  <div onClick={() => setIsServicesOpen(!isServicesOpen)} className="flex items-center justify-between">
+                    <span>Our Services</span>
+                    <motion.i className={`fas fa-caret-down ml-2 ${isServicesOpen ? 'rotate-180' : ''}`}></motion.i>
+                  </div>
+                  {isServicesOpen && (
+                    <motion.ul className="bg-white rounded shadow-lg mt-2 border border-gray-200 absolute left-0 w-64 z-50">
+                      {services.map((service, idx) => (
+                        <motion.li
+                          key={service}
+                          className="px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 cursor-pointer"
+                          whileHover={{ x: 8, color: "#2563EB" }}
+                        >
+                          <Link href={`/services?name=${encodeURIComponent(service)}`} onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}>
+                            {service}
+                          </Link>
+                        </motion.li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </motion.li>
+                <motion.li
+                  className="text-gray-700 font-medium py-2 border-b border-gray-200 cursor-pointer"
+                  whileHover={{ x: 10, color: "#1E40AF", transition: { duration: 0.3 } }}
+                >
+                  <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+                    Contact Us
+                  </Link>
+                </motion.li>
+                <motion.li
                   className="pt-4"
                 >
                   <motion.button 
                     className="bg-gradient-to-r from-[#25D366] to-[#1da851] text-white px-6 py-3 rounded-md font-semibold flex items-center space-x-2 w-full justify-center shadow-lg" 
-                    onClick={() => window.open('https://wa.me/919821575784', '_blank')}
+                    onClick={() => { window.open('https://wa.me/919821575784', '_blank'); setIsMenuOpen(false); }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <i className="fab fa-whatsapp"></i>
-                    <span>WhatsApp - 9821575784</span>
+                    {/* Attractive WhatsApp SVG icon for mobile */}
+                    <span className="inline-flex items-center gap-2">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#25D366"/>
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.075.149.198 2.099 3.205 5.077 4.372.711.306 1.263.489 1.695.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#fff"/>
+                      </svg>
+                      <span className="font-semibold">WhatsApp - 9821575784</span>
+                    </span>
                   </motion.button>
                 </motion.li>
               </motion.ul>
@@ -635,7 +661,7 @@ const Navbar = () => {
 
                     {/* Scrollable Services List */}
                     <motion.div 
-                      className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-gray-100"
+                      className="max-h-64 overflow-x-hidden scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-gray-100"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.2 }}
@@ -756,7 +782,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button for Sticky Nav */}
           <motion.div 
-            className="md:hidden"
+            className="flex md:hidden items-center"
             variants={stickyItemVariants}
           >
             <motion.button
