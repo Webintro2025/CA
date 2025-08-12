@@ -77,7 +77,7 @@ const TopHeader = () => {
           >
             <span className="text-green-300">🏢</span>
             <span className="hover:text-blue-300 transition-colors duration-200">
-              GST: 09AAJCC5657K1Z3
+              GST : 07AACCD4397G1J 
             </span>
           </motion.div>
           
