@@ -155,7 +155,7 @@ const Navbar = () => {
           >
             <motion.img 
               alt="Eazy Tax logo" 
-              className="object-contain cursor-pointer" 
+              className="object-contain cursor-pointer w-12 sm:w-[70px]" 
               height={50} 
               src="/log.jpg" 
               width={70}
@@ -274,7 +274,7 @@ const Navbar = () => {
                     </motion.div>
 
                     {/* Scrollable Services List */}
-                    <motion.div 
+                     <motion.div 
                       className="max-h-64 overflow-x-hidden scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-gray-100"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -660,7 +660,7 @@ const Navbar = () => {
                     </motion.div>
 
                     {/* Scrollable Services List */}
-                    <motion.div 
+                     <motion.div 
                       className="max-h-64 overflow-x-hidden scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-gray-100"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}

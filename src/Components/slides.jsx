@@ -62,7 +62,7 @@ const Slides = () => {
         variants={slideVariants}
       >
         {/* Full Width Sliding Container - Increased height */}
-        <motion.div 
+         <motion.div 
           className="relative overflow-x-hidden bg-gradient-to-r from-blue-50 via-white to-slate-50 py-20 w-full"
           variants={slideVariants}
           whileHover={{ 

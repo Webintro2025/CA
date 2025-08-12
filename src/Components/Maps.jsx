@@ -172,7 +172,7 @@ const Maps = () => {
         </motion.div>
 
         {/* Map Container */}
-        <motion.div 
+          <motion.div 
           className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-x-hidden border border-blue-100"
           variants={mapVariants}
           whileHover={{ 
