@@ -303,7 +303,7 @@ const Maps = () => {
               </motion.button>
 
               <motion.button
-                onClick={() => window.open('tel:+919821575784', '_blank')}
+                onClick={() => window.open('tel:+919971669475', '_blank')}
                 className="border-2 border-blue-500 text-blue-500 px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:bg-blue-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3"
                 whileHover={{ 
                   scale: 1.05,

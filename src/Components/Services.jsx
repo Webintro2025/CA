@@ -437,7 +437,7 @@ const Services = () => {
                 boxShadow: "0 10px 25px rgba(255,255,255,0.2)"
               }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('https://wa.me/919821575784', '_blank')}
+              onClick={() => window.open('https://wa.me/919971669475', '_blank')}
             >
               Contact Us Today
             </motion.button>

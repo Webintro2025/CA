@@ -321,7 +321,7 @@ const OurServices = () => {
                   transition: { duration: 0.3 }
                 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => window.open('https://wa.me/919821575784', '_blank')}
+                onClick={() => window.open('https://wa.me/919971669475', '_blank')}
               >
                 <motion.span
                   className="flex items-center justify-center gap-1.5 sm:gap-2"
@@ -377,7 +377,7 @@ const OurServices = () => {
                 transition: { duration: 0.3 }
               }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('https://wa.me/919821575784', '_blank')}
+              onClick={() => window.open('https://wa.me/919971669475', '_blank')}
             >
               <motion.span
                 className="flex items-center gap-1.5 sm:gap-2"

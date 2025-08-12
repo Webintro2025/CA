@@ -400,12 +400,12 @@ const Navbar = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              9821575784
+              9971669475
             </motion.span>
             <motion.button 
               className="bg-gradient-to-r from-[#25D366] to-[#1da851] text-white px-4 py-2 rounded-md font-semibold flex items-center space-x-2 shadow-lg" 
               type="button"
-              onClick={() => window.open('https://wa.me/919821575784', '_blank')}
+              onClick={() => window.open('https://wa.me/919971669475', '_blank')}
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 10px 25px rgba(37, 211, 102, 0.3)",
@@ -505,7 +505,7 @@ const Navbar = () => {
                 >
                   <motion.button 
                     className="bg-gradient-to-r from-[#25D366] to-[#1da851] text-white px-6 py-3 rounded-md font-semibold flex items-center space-x-2 w-full justify-center shadow-lg" 
-                    onClick={() => { window.open('https://wa.me/919821575784', '_blank'); setIsMenuOpen(false); }}
+                    onClick={() => { window.open('https://wa.me/919971669475', '_blank'); setIsMenuOpen(false); }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -515,7 +515,7 @@ const Navbar = () => {
                         <circle cx="12" cy="12" r="12" fill="#25D366"/>
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.075.149.198 2.099 3.205 5.077 4.372.711.306 1.263.489 1.695.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#fff"/>
                       </svg>
-                      <span className="font-semibold">WhatsApp - 9821575784</span>
+                      <span className="font-semibold">WhatsApp - 9971669475</span>
                     </span>
                   </motion.button>
                 </motion.li>
@@ -768,7 +768,7 @@ const Navbar = () => {
           {/* Sticky WhatsApp Button */}
           <motion.div variants={stickyItemVariants}>
             <motion.a
-              href="https://wa.me/919821575784"
+              href="https://wa.me/919971669475"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full font-medium transition-colors duration-200 flex items-center gap-2"

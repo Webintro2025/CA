@@ -230,7 +230,7 @@ const GetInTouch = () => {
                     transition: { duration: 0.3 }
                   }}
                 >
-                  9821575784
+                  9971669475
                 </motion.div>
               </div>
             </motion.div>
@@ -264,7 +264,7 @@ const GetInTouch = () => {
                     transition: { duration: 0.3 }
                   }}
                 >
-                  09AAJCC5657K1Z3
+                  07AACCD4397G1J
                 </motion.div>
               </div>
             </motion.div>
@@ -431,7 +431,7 @@ const GetInTouch = () => {
               transition: { duration: 0.3 }
             }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => window.open('https://wa.me/919821575784', '_blank')}
+            onClick={() => window.open('https://wa.me/919971669475', '_blank')}
           >
             <motion.span
               className="flex items-center gap-1 sm:gap-2"

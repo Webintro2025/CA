@@ -260,7 +260,7 @@ const Teams = () => {
                   boxShadow: "0 15px 30px rgba(255,255,255,0.3)"
                 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open('https://wa.me/919821575784', '_blank')}
+                onClick={() => window.open('https://wa.me/919971669475', '_blank')}
               >
                 Schedule Consultation
               </motion.button>

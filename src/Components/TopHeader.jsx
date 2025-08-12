@@ -144,7 +144,7 @@ const TopHeader = () => {
           </div>
           <div className="flex items-center space-x-0.5 xs:space-x-1">
             <span className="text-orange-300">⭐</span>
-            <span className="text-blue-300 font-semibold">CA firm since 1990</span>
+            <span className="text-blue-300 font-semibold">Providing services since 1990</span>
           </div>
         </div>
         <div className="text-gray-300 text-[8px] xs:text-[10px] sm:text-xs mt-0.5 sm:mt-1 text-center">

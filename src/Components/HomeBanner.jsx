@@ -297,7 +297,7 @@ const HomeBanner = () => {
                         backgroundColor: "rgba(14, 165, 233, 0.9)"
                       }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => window.open('https://wa.me/919821575784', '_blank')}
+                      onClick={() => window.open('https://wa.me/919971669475', '_blank')}
                       animate={{
                         boxShadow: [
                           "0 10px 30px rgba(14, 165, 233, 0.2)",
@@ -511,7 +511,7 @@ const HomeBanner = () => {
                         backgroundColor: "rgba(0, 0, 0, 0.8)"
                       }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => window.open('https://wa.me/919821575784', '_blank')}
+                      onClick={() => window.open('https://wa.me/919971669475', '_blank')}
                       animate={{
                         boxShadow: [
                           "0 10px 30px rgba(0, 0, 0, 0.3)",
