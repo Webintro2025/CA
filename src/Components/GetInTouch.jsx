@@ -162,7 +162,7 @@ const GetInTouch = () => {
                     transition: { duration: 0.3 }
                   }}
                 >
-                  adishwar@cklotech.com
+                  contact@eazy-tax.in
                 </motion.div>
               </div>
             </motion.div>

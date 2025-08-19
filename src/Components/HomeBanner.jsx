@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const HomeBanner = () => {
-  // Banner images array
-  const banners = [
+  // Banner images for desktop and mobile
+  const desktopBanners = [
     {
       id: 1,
       src: "/banner1.jpg",
@@ -20,7 +20,39 @@ const HomeBanner = () => {
       src: "/banner3.jpg",
       alt: "CA Services Banner 3"
     }
-  ]
+  ];
+  const mobileBanners = [
+    {
+      id: 1,
+      src: "/bannerM3.jpg",
+      alt: "Mobile Banner 1"
+    },
+    {
+      id: 2,
+      src: "/bannerM1.jpg",
+      alt: "Mobile Banner 2"
+    },
+    {
+      id: 3,
+      src: "/bannerM2.jpg",
+      alt: "Mobile Banner 3"
+    }
+  ];
+
+  const [banners, setBanners] = useState(desktopBanners);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      if (window.innerWidth < 640) {
+        setBanners(mobileBanners);
+      } else {
+        setBanners(desktopBanners);
+      }
+    };
+    checkScreen();
+    window.addEventListener('resize', checkScreen);
+    return () => window.removeEventListener('resize', checkScreen);
+  }, []);
 
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(1)
@@ -174,7 +206,7 @@ const HomeBanner = () => {
 
   return (
     <motion.div 
-  className="relative w-full h-[28vh] sm:h-[35vh] md:h-[60vh] lg:h-[70vh] overflow-x-hidden bg-gradient-to-r from-blue-100 via-white to-blue-300 shadow-2xl border border-blue-200"
+  className="relative w-full h-[28vh] sm:h-[35vh] md:h-[60vh] lg:h-[70vh] bg-gradient-to-r from-blue-100 via-white to-blue-300 shadow-2xl border border-blue-200"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -216,18 +248,20 @@ const HomeBanner = () => {
             {/* Text Content for First Banner */}
             {currentIndex === 0 && (
               <motion.div 
-                className="absolute inset-0 flex items-center justify-end pr-4 sm:pr-10 md:pr-24 lg:pr-16"
+                className="absolute inset-0 flex items-end justify-end pr-2 text-right 
+                  sm:items-center sm:justify-end sm:pr-10 md:pr-24 lg:pr-16 sm:text-right"
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
               >
                 <motion.div 
-                  className="max-w-xs sm:max-w-md md:max-w-lg text-left text-white"
+                  className="max-w-xs sm:max-w-md md:max-w-lg text-white 
+                    text-right sm:text-left"
                   variants={textVariants}
                 >
                   {/* Tagline */}
                   <motion.h1 
-                    className="text-xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6"
+                    className="text-sm sm:text-3xl md:text-4xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6"
                     variants={taglineVariants}
                     whileHover={{ 
                       scale: 1.02,
@@ -261,7 +295,7 @@ const HomeBanner = () => {
 
                   {/* Description */}
                   <motion.p 
-                    className="text-xs sm:text-sm md:text-lg leading-relaxed mb-3 sm:mb-5 md:mb-8 text-gray-100"
+                    className="text-[10px] sm:text-sm md:text-lg leading-relaxed mb-3 sm:mb-5 md:mb-8 text-gray-100"
                     variants={descriptionVariants}
                     whileHover={{ 
                       scale: 1.02,
@@ -365,7 +399,7 @@ const HomeBanner = () => {
             {/* Text Content for Third Banner (GST Return Filing) */}
             {currentIndex === 2 && (
               <motion.div 
-                className="absolute inset-0 flex items-center justify-start pl-2 sm:pl-6 md:pl-12 lg:pl-20"
+                className="absolute inset-0 flex items-center justify-start pl-1 sm:pl-4 md:pl-12 lg:pl-20"
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
@@ -376,7 +410,7 @@ const HomeBanner = () => {
                 >
                   {/* Service Badge */}
                   <motion.div
-                    className="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md border border-blue-400/40 rounded-full px-3 py-1.5 mb-4"
+                    className="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md border border-blue-400/40 rounded-full px-2 py-1.5 mb-4"
                     initial={{ opacity: 0, scale: 0.8, y: -20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
@@ -401,7 +435,7 @@ const HomeBanner = () => {
 
                   {/* Tagline */}
                   <motion.h1 
-                    className="text-lg sm:text-2xl md:text-3xl lg:text-5xl font-extrabold leading-tight mb-2 sm:mb-3 md:mb-4"
+                    className="text-[10px] sm:text-2xl md:text-3xl lg:text-5xl font-extrabold leading-tight mb-1 sm:mb-3 md:mb-4"
                     variants={taglineVariants}
                     whileHover={{ 
                       scale: 1.02,
@@ -435,7 +469,7 @@ const HomeBanner = () => {
 
                   {/* Description */}
                   <motion.p 
-                    className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed mb-2 sm:mb-4 md:mb-6 text-blue-100"
+                    className="text-[8px] sm:text-sm md:text-base lg:text-lg leading-relaxed mb-1 sm:mb-4 md:mb-6 text-blue-100"
                     variants={descriptionVariants}
                     whileHover={{ 
                       scale: 1.02,
@@ -493,6 +527,7 @@ const HomeBanner = () => {
                           }}
                         />
                         <span className="text-[10px] sm:text-xs text-blue-200">{feature}</span>
+                        {/* ...existing code... */}
                       </motion.div>
                     ))}
                   </motion.div>

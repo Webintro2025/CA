@@ -445,7 +445,7 @@ const WhyChooseUs = () => {
                   delay: 0.5
                 }}
               />
-              adishwar@cklotech.com
+              contact@eazy-tax.in
             </motion.p>
           </motion.div>
         </motion.div>

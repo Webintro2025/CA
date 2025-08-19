@@ -340,7 +340,7 @@ const Footer = () => {
                         transition: { duration: 0.3 }
                       }}
                     >
-                      adishwar@cklotech.com
+                      contact@eazy-tax.in
                     </motion.a>
                   </div>
                 </motion.div>

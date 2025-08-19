@@ -88,10 +88,10 @@ const TopHeader = () => {
           >
             <span className="text-yellow-300">📧</span>
             <a 
-              href="mailto:adishwar@cklotech.com"
+              href="mailto:contact@eazy-tax.in"
               className="hover:text-blue-300 transition-colors duration-200"
             >
-              adishwar@cklotech.com
+              contact@eazy-tax.in
             </a>
           </motion.div>
         </motion.div>
