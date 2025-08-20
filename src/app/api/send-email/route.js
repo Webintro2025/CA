@@ -4,16 +4,15 @@ export async function POST(req) {
   try {
     const { fullName, phoneNumber, email, message } = await req.json();
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: Number(process.env.SMTP_PORT) === 465, // SSL/TLS
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
-
+ const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,         // smtp.gmail.com
+  port: Number(process.env.SMTP_PORT), // 465
+  secure: Number(process.env.SMTP_PORT) === 465, // true for 465
+  auth: {
+    user: process.env.SMTP_USER,       // test123@gmail.com
+    pass: process.env.SMTP_PASS,       // App Password (NOT normal Gmail password)
+  },
+});
     await transporter.verify(); // optional
 
     const mailOptions = {
