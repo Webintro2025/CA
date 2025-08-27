@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: "Contact Us | Best CA Services in Delhi | Eazy Tax",
     description: "Contact Eazy Tax for expert Chartered Accountant services in Delhi. Get in touch for Company Registration, GST, Bookkeeping, MSME, Startup India, Society & Trust Registration, and more.",
-    url: "https://yourdomain.com/contact",
+    url: "https://eazy-tax.in/contact",
     siteName: "Eazy Tax Delhi",
     images: [
       {

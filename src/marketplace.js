@@ -1,0 +1,27 @@
+// List of major Indian cities for marketplace locations
+export const locations = [
+  "Bangalore",
+  "Mumbai",
+  "Delhi",
+  "Gurugram",
+  "Noida",
+  "Guwahati",
+  "Hyderabad",
+  "Ahmedabad",
+  "Jaipur",
+  "Lucknow",
+  "Indore",
+  "Nagpur",
+  "Pune",
+  "Kolkata",
+  "Chandigarh",
+  "Ranchi",
+  "Bhubaneswar",
+  "Thane",
+  "Dehradun",
+  "Rajkot",
+  "Bengaluru",
+  "Bhubaneswar",
+  "Panjim",
+  "Panaji"
+];

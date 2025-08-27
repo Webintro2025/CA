@@ -86,7 +86,7 @@ const Footer = () => {
                       rotate: [0, -5, 5, 0]
                     }}
                   />
-                  <motion.h1 
+                  <motion.h2 
                     className="text-2xl font-bold text-white" 
                     style={{fontFamily: 'Montserrat, sans-serif'}}
                     whileHover={{ 
@@ -96,7 +96,7 @@ const Footer = () => {
                     }}
                   >
                     Eazy Tax
-                  </motion.h1>
+                  </motion.h2>
                 </motion.div>
               </Link>
               <motion.p 

@@ -1,4 +1,6 @@
+
 "use client";
+// import servicesMeta from "@/seo/servicesMeta"; // If you need to use metadata in the component, import like this
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";

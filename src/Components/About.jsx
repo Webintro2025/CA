@@ -151,7 +151,7 @@ const About = () => {
           className="max-w-2xl w-full text-gray-800"
           variants={slideInRight}
         >
-          <motion.h2 
+          <motion.h1
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 sm:mb-5 md:mb-6 leading-tight bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -162,9 +162,9 @@ const About = () => {
               transition: { duration: 0.2 }
             }}
           >
-            About Us
-          </motion.h2>
-          
+            EAZY TAX
+          </motion.h1>
+
           <motion.div
             className="space-y-4 sm:space-y-5 md:space-y-6"
             initial={{ opacity: 0, y: 30 }}

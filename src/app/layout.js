@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Best CA Services in Delhi | Company Registration, GST, Bookkeeping & More",
+  title: "Eazy Tax | Best CA Services in Delhi",
   description: "Get expert Chartered Accountant services in Delhi: Company Registration, GST Registration & Return Filing, Bookkeeping, MSME, Startup India, Society & Trust Registration. Fast, reliable, and affordable legal & tax solutions for your business.",
   keywords: [
     "CA in Delhi",
@@ -34,6 +34,9 @@ export const metadata = {
     "Tax Consultant",
     "Business Compliance"
   ],
+  verification: {
+    google: "LBQOEuI9wHmDQrwkzO0E6VvR48UwqmCmkrbGUTa9fPE", // ← Yeh line important hai
+  },  
   openGraph: {
     title: "Best CA Services in Delhi | Company Registration, GST, Bookkeeping & More",
     description: "Expert CA services in Delhi for startups, SMEs, and businesses. Fast company registration, GST, bookkeeping, and more.",
@@ -60,9 +63,9 @@ export const metadata = {
     ]
   },
   alternates: {
-    canonical: "https://yourdomain.com/"
+    canonical: "https://eazy-tax.in/"
   },
-  metadataBase: new URL("https://yourdomain.com/"),
+  metadataBase: new URL("https://eazy-tax.in/"),
   robots: {
     index: true,
     follow: true
