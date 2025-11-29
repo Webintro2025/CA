@@ -31,7 +31,7 @@ export async function GET() {
     (city) => `bookkeeping-accounting-services-in/${encodeURIComponent(city.toLowerCase().replace(/\s+/g, '-'))}`
   );
   const dynamicLocations4= locations.map(
-    (city) => `import-export-code-registration-in/${encodeURIComponent(city.toLowerCase().replace(/\s+/g, '-'))}`
+    (city) => `import-export-code-registration/${encodeURIComponent(city.toLowerCase().replace(/\s+/g, '-'))}`
   );
 
   const baseUrl = 'https://eazy-tax.in/';
