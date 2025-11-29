@@ -30,6 +30,9 @@ export async function GET() {
   const dynamicLocations3= locations.map(
     (city) => `bookkeeping-accounting-services-in/${encodeURIComponent(city.toLowerCase().replace(/\s+/g, '-'))}`
   );
+  const dynamicLocations4= locations.map(
+    (city) => `import-export-code-registration-in/${encodeURIComponent(city.toLowerCase().replace(/\s+/g, '-'))}`
+  );
 
   const baseUrl = 'https://eazy-tax.in/';
 
@@ -39,6 +42,7 @@ export async function GET() {
     ...dynamicLocations.map((loc) => `${baseUrl}${loc}`),
     ...dynamicLocations2.map((loc) => `${baseUrl}${loc}`),
     ...dynamicLocations3.map((loc) => `${baseUrl}${loc}`),
+    ...dynamicLocations4.map((loc) => `${baseUrl}${loc}`),
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
