@@ -160,10 +160,10 @@ export default function LocationPage({ params }) {
   <h2 className="text-center mx-auto text-lg xs:text-xl sm:text-2xl md:text-3xl font-serif leading-[1.2] mb-4 sm:mb-6 text-black ">
     Our Comprehensive Service Range in {locationName}
   </h2>
-  <p className="text-xs xs:text-sm sm:text-base mt-2 sm:mt-3 leading-[1.6] px-4 mx-auto">
+  <p className="text-xs xs:text-sm sm:text-base mt-2  px-12 sm:mt-3 leading-[1.6] mx-auto">
     With over three decades of experience, our Chartered Accountancy firm offers an extensive portfolio of professional, compliance, and advisory solutions designed to support businesses at every stage right from inception to global expansion. <strong>Import Export Code Registration Services in {locationName}</strong>, Our services combine precision, expertise, and a deep understanding of Indian and international regulatory frameworks. Below is our complete and expanded service range, crafted to reflect trust, professionalism, and long-term commitment.
   </p>
-  <div className="flex flex-col md:flex-row gap-6 md:gap-10">
+  <div className="flex flex-col md:flex-row gap-6 px-12 md:gap-10">
     <ul className="space-y-4 sm:space-y-6 text-xs xs:text-sm sm:text-base mt-4 sm:mt-6 leading-[1.6] list-none px-4 w-full md:w-1/2">
       <li>
         <span className="font-bold">⭐ 1. Import Export Code Registration Services in {locationName}</span><br />
