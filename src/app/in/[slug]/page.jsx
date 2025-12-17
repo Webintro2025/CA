@@ -2,7 +2,7 @@ import ContactForm from "@/Components/ContactForm";
 import { locations } from "@/marketplace";
 
 export async function generateMetadata({ params }) {
-	const slug = params.slug;
+	const {slug} = await params;
 	// Convert slug to city name (reverse the slug logic)
 	const city = locations.find(
 		(loc) => loc.toLowerCase().replace(/\s+/g, '-') === slug
@@ -55,8 +55,8 @@ export async function generateMetadata({ params }) {
 	};
 }
 
-export default function LocationPage({ params }) {
-	const slug = params.slug;
+export default async function LocationPage({ params }) {
+	const {slug} = await params;
 	const city = locations.find(
 		(loc) => loc.toLowerCase().replace(/\s+/g, '-') === slug
 	);

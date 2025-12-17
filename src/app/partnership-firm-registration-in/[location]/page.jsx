@@ -8,14 +8,14 @@ export async function generateMetadata({ params }) {
         (loc) => loc.toLowerCase().replace(/\s+/g, '-') === slug
     );
     const cityName = city || "Location";
-    const url = `https://eazy-tax.in/bookkeeping-accounting-services-in/${slug}`;
+    const url = `https://eazy-tax.in/partnership-firm-registration-in/${slug}`;
     return {
-        title: `Bookkeeping Accounting Services in ${cityName} | Eazy Tax`,
-        description: `Need Bookkeeping Accounting Services in ${cityName} Call Eazy Tax, Best Bookkeeping Accounting Services in ${cityName}, Startup India Registration in ${cityName}.`,
+        title: `Partnership Firm Registration in ${cityName} | Eazy Tax`,
+        description: `Need Partnership Firm Registration in ${cityName} Call Eazy Tax, Best Partnership Firm Registration in ${cityName}, Startup India Registration in ${cityName}.`,
         keywords: [
          
             
-            `Bookkeeping Accounting Serivces in ${cityName}`,
+            `Partnership Firm Registration   in ${cityName}`,
             `Partnership Registration Services in ${cityName}`,
             `Chartered Accountant ${cityName}`,
             `CA Services ${cityName}`,
@@ -74,10 +74,10 @@ export default async  function LocationPage({ params }) {
 
   <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-2 xs:px-4 sm:px-6 md:px-8 lg:px-10 xl:px-10">
     <h1 className="text-white font-serif text-sm xs:text-base sm:text-xl md:text-2xl lg:text-2xl xl:text-5xl leading-tight drop-shadow-md">
-     Bookkeeping Accounting Services in {locationName}
+     Partnership Firm Registration in {locationName}
     </h1>
     <p className="text-white font-medium text-[10px] xs:text-xs sm:text-sm md:text-base mt-2 sm:mt-4 max-w-xs xs:max-w-md sm:max-w-2xl md:max-w-3xl lg:max-w-4xl drop-shadow">
-      Welcome To <a href="https://eazy-tax.in/">Eazy Tax</a>, If You Are Looking For <strong>Bookkeeping Accounting Services in {locationName}</strong>, We Are The Best Option For You. We Provide Best GST Registration Services in {locationName}, Bookkeeping Accounting Services in {locationName}, Import Export Code (IEC) Registration Services in {locationName}, India.
+      Welcome To <a href="https://eazy-tax.in/">Eazy Tax</a>, If You Are Looking For <strong>Partnership Firm Registration in {locationName}</strong>, We Are The Best Option For You. We Provide Best GST Registration Services in {locationName}, Partnership Firm Registration in {locationName}, Import Export Code (IEC) Registration Services in {locationName}, India.
     </p>
     <button
       className="mt-4 sm:mt-6 bg-red-600 hover:bg-red-700 text-white text-[10px] xs:t ext-xs sm:text-sm md:text-base font-normal py-1.5 xs:py-2 px-4 xs:px-6 rounded-full flex items-center space-x-2 shadow"

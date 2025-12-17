@@ -1,8 +1,8 @@
 import ContactForm from "@/Components/ContactForm";
 import { locations } from "@/marketplace";
 
-export async function generateMetadata({ params }) {
-    const slug = params.location;
+export async  function generateMetadata({ params }) {
+    const {slug} = await params;
     // Convert slug to city name (reverse the slug logic)
     const city = locations.find(
         (loc) => loc.toLowerCase().replace(/\s+/g, '-') === slug
@@ -42,8 +42,8 @@ export async function generateMetadata({ params }) {
     };
 }
 
-export default function LocationPage({ params }) {
-    const location = params.location; // Ensure consistent usage of 'location'
+export default async function LocationPage({ params }) {
+    const {location} = await params;
     const locationName = locations.find(
         (loc) => loc.toLowerCase().replace(/\s+/g, '-') === location
     );
